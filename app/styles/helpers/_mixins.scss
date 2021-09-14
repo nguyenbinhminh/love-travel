@@ -1,0 +1,155 @@
+@mixin size($width, $height: $width) {
+	width: $width;
+	height: $height;
+}
+@mixin absoluteCenter($direction: "left", $position: absolute) {
+	position: $position;
+	@if $direction == "left" {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	@if $direction == "top" {
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	@if $direction == "both" {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+@mixin absoluteFull() {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+// BackgroundColor
+@mixin bg($color: #ccc) {
+	background-color: $color;
+}
+// Flexbox sử dụng Object
+@mixin flexbox($align: flex-start, $justify: flex-start, $direction: row, $wrap: nowrap) {
+	display: flex;
+	align-items: $align;
+	justify-content: $justify;
+	flex-direction: $direction;
+	flex-wrap: $wrap;
+}
+// Hide Scrollbar
+@mixin hideScroll() {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+// Style Scrollbar
+@mixin styleScrollbar(
+	$width: 0.5rem,
+	$track-color: $gray-light-color,
+	$border-radius: 2rem,
+	$thumb-color: $third-color
+) {
+	&::-webkit-scrollbar {
+		width: $width;
+	}
+	&::-webkit-scrollbar-track {
+		background-color: $track-color;
+		border-radius: $border-radius;
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: $thumb-color;
+		border-radius: $border-radius;
+	}
+}
+@mixin textClamp($rows: 1, $size: 100%) {
+	display: -webkit-box;
+	-webkit-line-clamp: $rows;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: $size;
+	max-width: $size;
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+	@if $inset {
+		box-shadow: inset $top $left $blur $color;
+	} @else {
+		box-shadow: $top $left $blur $color;
+	}
+}
+@mixin maxWidth($breakpoint) {
+	@media screen and (max-width: $breakpoint) {
+		@content;
+	}
+}
+@mixin minWidth($breakpoint) {
+	@media screen and (min-width: $breakpoint) {
+		@content;
+	}
+}
+// Underline effect
+@mixin underlineEffect($color: #fff) {
+	text-decoration: none;
+	position: relative;
+	z-index: 1;
+	&::after {
+		position: absolute;
+		content: "";
+		width: 100%;
+		height: 0.5rem;
+		left: 0;
+		bottom: 1.1rem;
+		background-color: $color;
+		z-index: -1;
+	}
+}
+// Label Menu item
+@mixin labelMenu($content: "", $bg: #fff) {
+	&::after {
+		content: $content;
+		position: absolute;
+		top: 50%;
+		right: 0;
+		transform: translateY(-50%);
+		padding: 0.3rem 0.5rem;
+		color: #fff;
+		font-size: 1rem;
+		line-height: 1rem;
+		text-transform: uppercase;
+		border-radius: 0.3rem;
+		margin-right: 1.5rem;
+		background-color: $bg;
+	}
+}
+
+// Responsive Font size
+@function strip-unit($value) {
+	@return $value / ($value * 0 + 1);
+}
+
+@mixin resFont($min-vw, $max-vw, $min-font-size, $max-font-size) {
+	$u1: unit($min-vw);
+	$u2: unit($max-vw);
+	$u3: unit($min-font-size);
+	$u4: unit($max-font-size);
+
+	@if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+		& {
+			font-size: $min-font-size;
+			@media screen and (min-width: $min-vw) {
+				font-size: calc(
+					#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} *
+						((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
+				);
+			}
+			@media screen and (min-width: $max-vw) {
+				font-size: $max-font-size;
+			}
+		}
+	}
+}

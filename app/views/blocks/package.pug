@@ -1,0 +1,71 @@
+section.package.grid.wide
+	+blockTitle("Promotions", "Our", "packages", "green")
+	.package-list.row.lg-gutter
+		+packageItem(placeNames.berlin.name, placeNames.berlin.link, placeImgs.berlin, placeIcons.arch, "orange", placeLocations.europe.name, placeLocations.europe.link, "Cultural", "Relax", 700, 0, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque.", "yellow")
+		+packageItem(placeNames.hongkong.name, placeNames.hongkong.link, placeImgs.hongkong, placeIcons.torigate, "red", placeLocations.asia.name, placeLocations.asia.link, "History", "Cultural", 1000, 500, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque.", "red", true)
+		+packageItem(placeNames.sanfrancisco.name, placeNames.sanfrancisco.link, placeImgs.sanfrancisco, placeIcons.goldengate, "violet", placeLocations.us.name, placeLocations.us.link, "Sport", "Relax", 400, 0, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque.", "violet")
+		+packageItem(placeNames.phuket.name, placeNames.phuket.link, placeImgs.phuket, placeIcons.buddha, "blue", placeLocations.thailandian.name, placeLocations.thailandian.link, "Relax", "Cultural", 1200, 0, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque.", "primary")
+		+packageItem(placeNames.amsterdam.name, placeNames.amsterdam.link, placeImgs.amsterdam, placeIcons.eye, "orange-rev", placeLocations.us.name, placeLocations.us.link, "History", "Sport", 1500, 0, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque.", "orange")
+		+packageItem(placeNames.tuscany.name, placeNames.tuscany.link, placeImgs.tuscany, placeIcons.pisa, "green", placeLocations.us.name, placeLocations.us.link, "Sport", "Relax", 950, 730, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque.", "green", true)
+		//- .package-item.col.l-4.m-12.c-12
+			.package-item-container
+				.package-media
+					img(src="./images/package-berlin.jpg", alt="Berlin").package-media-image
+					a(href="#").package-media-icon.lg-orange
+						img(src="./images/destination-europe-icon-arch.png", alt="Icon")
+				.package-item-wrapper
+					.package-info
+						a(href="#").package-info-place.color-title Berlin
+						a(href="#").package-info-location
+							img(src="./images/icon-location.png", alt="Icon").package-info-location-icon
+							span.package-info-location-text.color-text Europe
+					.package-bottom
+						.package-type
+							.package-type-link
+								span.package-type-text #[a(href="#").color-title Cultural]
+								span.package-type-text #[a(href="#").color-title Relax] #[span.bg-yellow + 1]
+							a(href="#").package-type-price.color-title 700 $
+						p.package-desc.color-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque.
+						a(href="#").package-btn.btn.btn-sm.bg-yellow.color-white details
+
+		//- .package-item.col.l-4.m-12.c-12
+			.package-item-container
+				.package-media
+					img(src="./images/package-hongkong.jpg", alt="Hong Kong").package-media-image
+					a(href="#").package-media-icon.lg-red
+						img(src="./images/destination-asia-icon-torii-gate.png", alt="Icon")
+				.package-item-wrapper
+					.package-info
+						a(href="#").package-info-place.color-title Hong Kong
+						a(href="#").package-info-location
+							img(src="./images/icon-location.png", alt="Icon").package-info-location-icon
+							span.package-info-location-text.color-text Asia
+					.package-bottom
+						.package-type
+							.package-type-link
+								span.package-type-text #[a(href="#").color-title History]
+								span.package-type-text #[a(href="#").color-title Cultural] #[span.bg-red + 1]
+							a(href="#").package-type-price.color-title #[span.package-type-price-origin 1000] 500 $
+						p.package-desc.color-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque.
+						a(href="#").package-btn.btn.btn-sm.bg-red.color-white details
+
+		//- .package-item.col.l-4.m-12.c-12
+			.package-item-container
+				.package-media
+					img(src="./images/package-sanfrancisco.jpg", alt="San Francisco").package-media-image
+					a(href="#").package-media-icon.lg-violet
+						img(src="./images/destination-US-icon-golden-gate.png", alt="Icon")
+				.package-item-wrapper
+					.package-info
+						a(href="#").package-info-place.color-title San Francisco
+						a(href="#").package-info-location
+							img(src="./images/icon-location.png", alt="Icon").package-info-location-icon
+							span.package-info-location-text.color-text United States
+					.package-bottom
+						.package-type
+							.package-type-link
+								span.package-type-text #[a(href="#").color-title Sport]
+								span.package-type-text #[a(href="#").color-title Relax] #[span.bg-violet + 1]
+							a(href="#").package-type-price.color-title 400 $
+						p.package-desc.color-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque.
+						a(href="#").package-btn.btn.btn-sm.bg-violet.color-white details

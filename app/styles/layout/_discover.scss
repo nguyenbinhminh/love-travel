@@ -1,0 +1,31 @@
+.discover {
+	&-wrapper {
+		margin-top: 7.5rem;
+	}
+	&-item {
+		text-align: center;
+		padding: 6rem 1.5rem;
+		color: #fff;
+		&-caption {
+			font-size: 1.4rem;
+			line-height: 2rem;
+			letter-spacing: 0.2rem;
+			font-weight: normal;
+			text-transform: uppercase;
+			margin-bottom: 2rem;
+		}
+		&-title {
+			font-size: 3.6rem;
+			text-transform: capitalize;
+			font-weight: bold;
+			line-height: 2.5rem;
+			margin-bottom: 4rem;
+		}
+		&-left {
+			background: url("../images/discover-bg-1.jpg") center center / cover no-repeat;
+		}
+		&-right {
+			background: url("../images/discover-bg-2.jpg") center center / cover no-repeat;
+		}
+	}
+}

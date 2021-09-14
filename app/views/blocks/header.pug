@@ -1,0 +1,30 @@
+header.header.grid
+	//- Header Navbar
+	include header-navbar.pug
+	//- Header Content: Title, Caption, Select & List Image
+	.header-content
+		//- Header Background
+		.header-content-bg
+		//- Header Title & Caption
+		.header-content-wrapper.grid.wide
+			h1.header-content-title Search your next #[span(class="text-underline") Holiday]
+			h2.header-content-caption Check our best promotions
+			//- Select Option
+			.header-content-select
+				select#destination(name="destination")
+					option(value="0") Choose your Destination ...
+					option(value="1") Europe
+					option(value="2") &nbsp;&nbsp;- Italy
+					option(value="3") &nbsp;&nbsp;- Netherlands
+					option(value="4") Asia
+					option(value="5") &nbsp;&nbsp;- Thailandian
+					option(value="6") United States
+					option(value="7") Oceania
+				.header-content-search
+					img(src="./images/header-icon-search.png", alt="Icon Search").header-content-search-icon
+			//- List Icon & Text
+			ul.header-content-list
+				+contentItem("#","./images/header-icon-relax.png","Relax")
+				+contentItem("#","./images/header-icon-cultural.png", "Cultural")
+				+contentItem("#","./images/header-icon-sport.png", "Sport")
+				+contentItem("#","./images/header-icon-history.png", "History")

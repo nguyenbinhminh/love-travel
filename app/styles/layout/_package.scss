@@ -1,0 +1,145 @@
+.package {
+	&.grid.wide {
+		margin-top: 6rem;
+		margin-bottom: 6rem;
+	}
+	&-list {
+		align-items: stretch;
+	}
+	&-item {
+		margin-bottom: 3rem;
+		&-container {
+			border: 1px solid #f1f1f1;
+			height: 100%;
+			@include flexbox(flex-start, space-between, column);
+		}
+		&-wrapper {
+			padding: 3rem;
+			@include flexbox(flex-start, space-between, column);
+			flex: 1;
+			// height: 100%;
+		}
+		@media (min-width: 740px) and (max-width: 1023px) {
+			margin-bottom: 2rem;
+		}
+	}
+	&-bottom {
+		@include flexbox(flex-start, space-between, column);
+		flex: 1;
+	}
+	&-media {
+		position: relative;
+		&-image {
+			display: block;
+			width: 100%;
+			object-fit: cover;
+		}
+		&-icon {
+			display: inline-block;
+			width: 5rem;
+			height: 5rem;
+			border-radius: 50%;
+			position: absolute;
+			bottom: -2.5rem;
+			right: 2rem;
+			@include flexbox(center, center);
+			img {
+				width: 2.6rem;
+			}
+		}
+		&-label {
+			display: inline-block;
+			text-decoration: none;
+			background-color: $title-color;
+			color: #fff;
+			border-radius: 3rem;
+			font-size: 1.3rem;
+			line-height: 1.3rem;
+			text-align: center;
+			padding: 0.4rem 1.2rem;
+			position: absolute;
+			top: 2rem;
+			right: 2rem;
+		}
+	}
+	&-info {
+		width: 100%;
+		&-place {
+			font-size: 2rem;
+			line-height: 2rem;
+			font-weight: bold;
+			text-decoration: none;
+			margin-bottom: 1rem;
+			display: block;
+		}
+		&-location {
+			display: block;
+			text-decoration: none;
+			padding-bottom: 2rem;
+			border-bottom: 1px solid #f1f1f1;
+			&-icon {
+				width: 1.4rem;
+				height: 1.4rem;
+				margin-right: 0.5rem;
+			}
+			&-text {
+				letter-spacing: 0.2rem;
+				font-size: 1.5rem;
+				line-height: 1.5rem;
+			}
+		}
+	}
+	&-type {
+		width: 100%;
+		@include flexbox(flex-end, space-between);
+		padding-top: 1.5rem;
+		padding-bottom: 1rem;
+		border-bottom: 1px solid #f1f1f1;
+		margin-bottom: 2rem;
+		&-text {
+			display: block;
+			letter-spacing: 0.2rem;
+			text-transform: uppercase;
+			font-weight: normal;
+			font-size: 1.4rem;
+			line-height: 2.7rem;
+			span {
+				display: inline-block;
+				font-size: 1rem;
+				line-height: 1.4rem;
+				border-radius: 3rem;
+				margin-left: 0.5rem;
+				padding: 0.2rem 0.8rem;
+				color: #fff;
+			}
+			a {
+				text-decoration: none;
+			}
+		}
+		&-price {
+			text-decoration: none;
+			font-size: 2.5rem;
+			line-height: 2.5rem;
+			font-weight: normal;
+			margin-left: auto;
+			&-origin {
+				text-decoration: line-through;
+				color: $text-color;
+				font-size: 2rem;
+				line-height: 2rem;
+			}
+		}
+	}
+	&-desc {
+		margin-top: auto;
+		margin-bottom: 2rem;
+		font-size: 1.4rem;
+		line-height: 2.7rem;
+		letter-spacing: 0.1rem;
+		@include textClamp(4);
+		flex: 1;
+	}
+	&-btn {
+		line-height: 2.7rem;
+	}
+}

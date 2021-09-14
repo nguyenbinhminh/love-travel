@@ -1,0 +1,128 @@
+include header-navbar.pug
+.header
+  .header-wrapper.grid.wide
+    .header-title
+      +blockTitle("our package", "Search your", "Holiday", "red", "left")
+    .header-filter
+      .filter-wrapper.row.lg-gutter
+        .filter-item.filter-select.col.l-4.m-12.c-12
+          .filter-item-container
+            .filter-label
+              h2.filter-label--text Select your destination:
+            .filter-select
+              select#destination(name="destination")
+                option(value="0") All Destination
+                option(value="1") Europe
+                option(value="2") &nbsp;&nbsp;- Italy
+                option(value="3") &nbsp;&nbsp;- Netherlands
+                option(value="4") Asia
+                option(value="5") &nbsp;&nbsp;- Thailandian
+                option(value="6") United States
+                option(value="7") Oceania
+              img(src="./images/icon-location.png", alt="Icon Location").filter-icon
+        .filter-item.filter-date.col.l-4.m-12.c-12
+          .filter-item-container
+            .filter-label
+              h2.filter-label--text Select your date:
+            .filter-input
+              input(placeholder="mm-dd-yyyy" data-toggle="datepicker").filter-input-date
+              img(src="./images/icon-calendar-grey.png", alt="Icon calendar").filter-icon
+        .filter-item.filter-price.col.l-4.m-12.c-12
+          .filter-item-container
+            .filter-label
+              h2.filter-label--text Max price:
+              h2.filter-label--value #[span#filter-label--value 5000] $
+            .filter-price
+              .filter-price-line
+                input(type="range" class="filter-price-progress" id="filter-price-progress" min="0" max="10000" value="5000")
+              .filter-price-content
+                input(type="checkbox" id="promotions")
+                label(for="promotions" class="color-text") See only promotions
+      .filter-more
+        .filter-more-wrapper
+          .filter-more-title
+            img(src="./images/icon-filter-white.png", alt="icon filter", class="filter-more-icon")
+            h3.filter-more-text More filter
+            .filter-more-type
+              .filter-more-type-container.row
+                .filter-more-type-wrapper.col.l-3
+                  h3.filter-more-type-title Typologies:
+                  ul.filter-more-type-list
+                    li.filter-more-type-item
+                      input(type='checkbox', class='filter-more-type-checkbox', id='filter-more-type-relax')
+                      label(for="filter-more-type-relax") Relax
+                    li.filter-more-type-item
+                      input(type='checkbox', class='filter-more-type-checkbox', id='filter-more-type-cultural')
+                      label(for="filter-more-type-cultural") Cultural
+                    li.filter-more-type-item
+                      input(type='checkbox', class='filter-more-type-checkbox', id='filter-more-type-sport')
+                      label(for="filter-more-type-sport") Sport
+                    li.filter-more-type-item
+                      input(type='checkbox', class='filter-more-type-checkbox', id='filter-more-type-history')
+                      label(for="filter-more-type-history") History
+                .filter-more-type-wrapper.col.l-3
+                  h3.filter-more-type-title Durations:
+                  ul.filter-more-type-list
+                    li.filter-more-type-item
+                      input(type='checkbox', class='filter-more-type-checkbox', id='filter-more-type-1-3-day')
+                      label(for="filter-more-type-1-3-day") 1 - 3 Days
+                    li.filter-more-type-item
+                      input(type='checkbox', class='filter-more-type-checkbox', id='filter-more-type-3-6-day')
+                      label(for="filter-more-type-3-6-day") 3 - 6 Days
+                    li.filter-more-type-item
+                      input(type='checkbox', class='filter-more-type-checkbox', id='filter-more-type-6-9-day')
+                      label(for="filter-more-type-6-9-day") 6 - 9 Days
+                    li.filter-more-type-item
+                      input(type='checkbox', class='filter-more-type-checkbox', id='filter-more-type-9-12-day')
+                      label(for="filter-more-type-9-12-day") 9 - 12 Days
+                .filter-more-type-wrapper.col.l-3
+                  h3.filter-more-type-title Difficulty:
+                  ul.filter-more-type-list
+                    li.filter-more-type-item
+                      input(type='checkbox', class='filter-more-type-checkbox', id='filter-more-type-hight')
+                      label(for="filter-more-type-hight") High
+                    li.filter-more-type-item
+                      input(type='checkbox', class='filter-more-type-checkbox', id='filter-more-type-low')
+                      label(for="filter-more-type-low") Low
+                    li.filter-more-type-item
+                      input(type='checkbox', class='filter-more-type-checkbox', id='filter-more-type-medium')
+                      label(for="filter-more-type-medium") Medium
+                .filter-more-type-wrapper.col.l-3
+                  h3.filter-more-type-title Min Age:
+                  ul.filter-more-type-list
+                    li.filter-more-type-item
+                      input(type='checkbox', class='filter-more-type-checkbox', id='filter-more-type-ten-year')
+                      label(for="filter-more-type-ten-year") 10 Years
+                    li.filter-more-type-item
+                      input(type='checkbox', class='filter-more-type-checkbox', id='filter-more-type-18-year')
+                      label(for="filter-more-type-18-year") 18 years
+                    li.filter-more-type-item
+                      input(type='checkbox', class='filter-more-type-checkbox', id='filter-more-type-3-year')
+                      label(for="filter-more-type-3-year") 3 Years
+    .header-filter-other
+      .filter-other-left
+        .filter-left-wrapper.filter-left-price
+          .filter-left-title
+            h3.filter-left-title-text Price
+            img(src="./images/icon-down-arrow-white.svg", alt="icon arrow").filter-left-title-icon
+            ul.filter-left-list
+              li.filter-left-item
+                a(href="#").filter-left-link Lowest pirce
+              li.filter-left-item
+                a(href="#").filter-left-link Highest pirce
+        .filter-left-wrapper.filter-left-name
+          .filter-left-title
+            h3.filter-left-title-text Name
+            img(src="./images/icon-down-arrow-white.svg", alt="icon arrow").filter-left-title-icon
+            ul.filter-left-list
+              li.filter-left-item
+                a(href="#").filter-left-link Desc
+              li.filter-left-item
+                a(href="#").filter-left-link Asc
+      .filter-other-right
+        input(type="radio", name="view", class="filter-view-list", id="filter-view-list")
+        label(for="filter-view-list").filter-view-label.filter-view-label-list
+          //- img(src="./images/icon-list-white-opacity.png", alt="", class="filter-view-icon")
+        input(type="radio", name="view", class="filter-view-thumb", id="filter-view-thumb", checked="checked")
+        label(for="filter-view-thumb").filter-view-label.filter-view-label-thumb
+          //- img(src="./images/icon-menu-white.png", alt="", class="filter-view-icon")

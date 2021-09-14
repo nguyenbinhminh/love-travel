@@ -1,0 +1,156 @@
+.header-top
+	.header-navbar
+		//- Header Logo
+		.header-navbar-logo
+			a.header-logo-link(href="/")
+				img.header-logo-image(src="./images/header-logo.png", alt="Header logo")
+		//- Header Navigation
+		.header-navbar-nav
+			ul.nav-list
+				+navItem("Home", "/")
+				+navItem("Packages", "/search2.html")
+					ul.nav-subnav-list
+						+subNavItem("Search 1", "/search2.html", "hot")
+						+subNavItem("Search 2", "/search1.html")
+						+subNavItem("Tour package", "/hongkong.html", "sub")
+							ul.nav-subnav-list
+								+subNavItem("Carousel", "/sanfrancisco.html", "best")
+								+subNavItem("Custop map", "/berlin.html")
+								+subNavItem("360 panorama", "/phuket.html")
+								+subNavItem("Default", "/amsterdam.html")
+						+subNavItem("Destination", "/europe.html")
+						+subNavItem("Typology", "/sport.html")
+				+navItem("Shop", "/shop.html")
+					ul.nav-subnav-list
+						+subNavItem("Archive", "/shop.html")
+						+subNavItem("Single Product", "/bora.html")
+						+subNavItem("Cart", "/cart.html")
+						+subNavItem("Checkout", "/checkout.html")
+				+navItem("About us", "/about-us-3.html")
+					ul.nav-subnav-list
+						+subNavItem("About us 1", "/about-us-3.html", "new")
+						+subNavItem("About us 2", "/about-us-2.html")
+						+subNavItem("About us 3", "/about-us-1.html")
+				+navItem("Pages", "/phuket.html")
+					ul.nav-subnav-list
+						+subNavItem("Services", "/services.html")
+						+subNavItem("Agency tours", "/agency-tours.html")
+						+subNavItem("Testimonials", "/testimonials.html")
+						+subNavItem("Prices", "/prices.html")
+						+subNavItem("Promotions", "/promotions.html")
+						+subNavItem("Faq", "/faq.html")
+						+subNavItem("Coming soon", "/coming-soon.html")
+						+subNavItem("About us", "/about-us-3.html", "sub")
+							ul.nav-subnav-list
+								+subNavItem("About us 1", "/about-us-3.html", "new")
+								+subNavItem("About us 2", "/about-us-2.html")
+								+subNavItem("About us 3", "/about-us-1.html")
+						+subNavItem("Contact", "/contact-1.html", "sub")
+							ul.nav-subnav-list
+								+subNavItem("Contact 1", "/contact-1.html")
+								+subNavItem("Contact 2", "/contact-2.html")
+				+navItem("News", "/news.html")
+					ul.nav-subnav-list
+						+subNavItem("Archive", "/news.html")
+						+subNavItem("Single post", "/new-routes.html", "sub")
+							ul.nav-subnav-list
+								+subNavItem("Full width", "/new-routes.html")
+								+subNavItem("Right sidebar", "/love-travel.html")
+								+subNavItem("Left sidebar", "/alternative-trips.html")
+				+navItem("Contact", "/contact-1.html")
+					ul.nav-subnav-list
+						+subNavItem("Contact 1", "/contact-1.html")
+						+subNavItem("Contact 2", "/contact-2.html")
+				+navItem("Book now", "/search2.html", "special")
+		//- Header Menu sidebar
+		.header-navbar-menu
+			input(type="checkbox").header-menu-input#header-menu-input
+			label(for="header-menu-input").header-menu-label
+				img.header-menu-icon(src="./images/header-menu.png", alt="Header Menu Sidebar Icon")
+			.sidebar
+				label(for="header-menu-input").sidebar-close
+					//- Close icon on PC
+					img(src="./images/sidebar-icon-close.png", alt="Sidebar Close Icon").sidebar-close-icon
+					//- Close icon on Mobile
+					img(src="./images/sidebar-icon-close-white.svg", alt="Sidebar Close Icon").sidebar-close-icon-white
+				.sidebar-wrapper
+					//- Sidebar Header
+					.sidebar-header
+						+sidebarHeader("Best", "Packages", "yellow--light")
+					//- Sidebar Packages
+					.sidebar-packages
+						ul.sidebar-packages-list
+							+sidebarPackagesItem("./images/sidebar-berlin.jpg", "Berlin", "#", "Europe", "From 700 $")
+							+sidebarPackagesItem("./images/sidebar-hong_kong.jpg", "Hong Kong", "#", "Asia", "From 500 $", "red")
+							+sidebarPackagesItem("./images/sidebar-san_francisco.jpg", "San Francisco", "#", "United States", "From 400 $", "violet")
+					//- Single Packages:
+					.sidebar-single-package
+						+singlePackage("./images/destination-europe.jpg","./images/destination-europe-icon-arch.png", "europe", 3, {"Berlin": "#", "Amsterdam": "#", "Tuscany" :"#"})
+					//- Sidebar Header
+					.sidebar-header
+						+sidebarHeader("Last", "Minutes", "orange")
+					//- Sidebar Packages
+					.sidebar-packages
+						ul.sidebar-packages-list
+							+sidebarPackagesItem("./images/sidebar-tuscany.jpg", "Tuscany", "#", "Italy", "From 730 $", "green")
+							+sidebarPackagesItem("./images/sidebar-amsterdam.jpg", "Amsterdam", "#", "Netherlands", "From 1.500 $", "orange-rev")
+							+sidebarPackagesItem("./images/sidebar-phuket.jpg", "Phuket", "#", "Thailandian", "From 1.200 $", "blue")
+				//- Menu bar on Mobile devices
+				.sidebar-mobile
+					ul.sidebar-mobile-list
+						+sidebarMobileItem("Home", "#")
+						+sidebarMobileItem("Packages", "#")
+							ul.sidebar-mobile-sub-list
+								+sidebarMobileSubItem("Search 1", "#")
+								+sidebarMobileSubItem("Search 2", "#")
+								+sidebarMobileSubItem("Tour packages", "#")
+									ul.sidebar-mobile-sub-list
+										+sidebarMobileSubItem("Carousel", "#")
+										+sidebarMobileSubItem("Custom map", "#")
+										+sidebarMobileSubItem("360 panorama", "#")
+										+sidebarMobileSubItem("Default", "#")
+								+sidebarMobileSubItem("Destination", "#")
+								+sidebarMobileSubItem("Typology", "#")
+						+sidebarMobileItem("Shop", "#")
+							ul.sidebar-mobile-sub-list
+								+sidebarMobileSubItem("Archive", "#")
+								+sidebarMobileSubItem("Single product", "#")
+								+sidebarMobileSubItem("Cart", "#")
+								+sidebarMobileSubItem("Checkout", "#")
+						+sidebarMobileItem("About us", "#")
+							ul.sidebar-mobile-sub-list
+								+sidebarMobileSubItem("About us", "#")
+								+sidebarMobileSubItem("About us 2", "#")
+								+sidebarMobileSubItem("About us 3", "#")
+						+sidebarMobileItem("Pages", "#")
+							ul.sidebar-mobile-sub-list
+								+sidebarMobileSubItem("Services", "#")
+								+sidebarMobileSubItem("Agency tours", "#")
+								+sidebarMobileSubItem("Testimonials", "#")
+								+sidebarMobileSubItem("Prices", "#")
+								+sidebarMobileSubItem("Promotions", "#")
+								+sidebarMobileSubItem("Faq", "#")
+								+sidebarMobileSubItem("Coming soon", "#")
+								+sidebarMobileSubItem("About us", "#")
+									ul.sidebar-mobile-sub-list
+										+sidebarMobileSubItem("About us 1", "#")
+										+sidebarMobileSubItem("About us 2", "#")
+										+sidebarMobileSubItem("About us 3", "#")
+								li.sidebar-mobile-sub-item
+									a(href="#").sidebar-mobile-sub-link Contact
+									ul.sidebar-mobile-sub-list
+										+sidebarMobileSubItem("Contact 1", "#")
+										+sidebarMobileSubItem("Contact 2", "#")
+						+sidebarMobileItem("News", "#")
+							ul.sidebar-mobile-sub-list
+								+sidebarMobileSubItem("Archive", "#")
+								+sidebarMobileSubItem("Single post", "#")
+									ul.sidebar-mobile-sub-list
+										+sidebarMobileSubItem("Full width", "#")
+										+sidebarMobileSubItem("Right sidebar", "#")
+										+sidebarMobileSubItem("Left sidebar", "#")
+						+sidebarMobileItem("Contact", "#")
+							ul.sidebar-mobile-sub-list
+								+sidebarMobileSubItem("Contact 1", "#")
+								+sidebarMobileSubItem("Contact 2", "#")
+						+sidebarMobileItem("Book now", "#")

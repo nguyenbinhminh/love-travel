@@ -1,0 +1,25 @@
+section.beach.grid.wide
+	.beach-wrapper.row.no-gutters
+		.beach-info.col.l-4.m-12.c-12
+			+blockTitle("north america", "the best", "beachs", "blue", "left")
+			+beachInfoDesc(["Lorem ipsum dolor sit amet, consectetur adip iscing elit. Proin rhoncus urna dictum neque molestie ultricies mauris ac.", "Lorem ipsum dolor sit amet, consectetur adip iscing elit. Proin rhoncus urna dictum neque molestie ultricies mauris ac."])
+			h2.beach-info-price.color-title #[span.beach-info-price-origin.color-text-light 800] #[span.beach-info-price-sale 500 $] / For person
+			a(href="#").beach-info-btn.btn.btn-lg.bg-green.color-white Book now
+		//- Slider
+		.beach-slider.col.l-8.m-12.c-12
+			.beach-slider-images
+				img(src="./images/beach-bg-1.jpg", alt="Slider image").beach-slider-image
+				img(src="./images/beach-bg-2.jpg", alt="Slider image").beach-slider-image
+				img(src="./images/beach-bg-3.jpg", alt="Slider image").beach-slider-image
+			.beach-slider-count
+				.beach-slider-count-list
+					+beachSliderCount("000", "Days")
+					+beachSliderCount("00", "Hours")
+					+beachSliderCount("00", "Minutes")
+					+beachSliderCount("00", "Seconds")
+section.benefit.grid.wide
+	.benefit-wrapper.row.lg-gutter
+		+benefitItem("./images/world-tour-icon.png", "World tour", "Lorem ipsum dolor sit amet conse ctetur adip iscing elit Proin rhonc us urna dictum.")
+		+benefitItem("./images/cruise-icon.png", "Cruises", "Lorem ipsum dolor sit amet conse ctetur adip iscing elit Proin rhonc us urna dictum.")
+		+benefitItem("./images/best-tours-icon.png", "Best tours", "Lorem ipsum dolor sit amet conse ctetur adip iscing elit Proin rhonc us urna dictum.")
+

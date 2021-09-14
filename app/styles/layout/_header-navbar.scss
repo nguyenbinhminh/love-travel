@@ -1,0 +1,332 @@
+// Header
+.header {
+	// Header Top
+	&-top {
+		position: relative;
+		top: 0;
+		z-index: 2;
+	}
+	&-navbar {
+		padding: 2rem 5rem;
+		@include flexbox(center);
+		background-color: rgba(#000000, 0.12);
+		// Change background on Screen width <= 1200px
+		@include maxWidth(1200px) {
+			background-color: #555555;
+		}
+		&-logo {
+			padding: 0 1.5rem;
+			margin-right: 2rem;
+			@include flexbox(center);
+			padding-right: 5rem;
+		}
+		&-nav {
+			// Hide Navbar on Screen width <= 1200px
+			@include maxWidth(1200px) {
+				display: none;
+			}
+		}
+		&-menu {
+			margin-left: auto;
+			padding: 0 1.5rem;
+			position: relative;
+		}
+	}
+	// Logo
+	&-logo {
+		&-link {
+			display: block;
+		}
+		&-image {
+			width: 16rem;
+		}
+	}
+	// Menu
+	&-menu {
+		&-icon {
+			width: 2.5rem;
+			cursor: pointer;
+		}
+		&-input {
+			display: none;
+			&:checked {
+				& ~ .sidebar {
+					transform: translateX(0);
+				}
+			}
+		}
+	}
+}
+// Navbar
+.nav {
+	&-list {
+		@include flexbox(center);
+	}
+	&-item {
+		margin-right: 0.5rem;
+		position: relative;
+		&:hover {
+			& > .nav-subnav-list {
+				display: block;
+			}
+		}
+	}
+	&-link {
+		display: inline-block;
+		padding: 2.5rem 1.5rem;
+		font-size: 1.4rem;
+		line-height: 1.4rem;
+		letter-spacing: 0.2rem;
+		text-transform: uppercase;
+		text-decoration: none;
+		color: #fff;
+		&--special {
+			padding: 1rem 1.5rem;
+			border-radius: 3rem;
+			margin-left: 2.5rem;
+			background-color: $violet-color;
+		}
+	}
+	// Sub Nav
+	&-subnav {
+		&-list {
+			display: none;
+			background-color: #fff;
+			min-width: 19rem;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			box-shadow: 0px 2px 5px #f1f1f1;
+			&::before {
+				content: "";
+				position: absolute;
+				top: -2.5rem;
+				left: 0;
+				width: 65%;
+				height: 3rem;
+				cursor: pointer;
+			}
+		}
+		&-item {
+			position: relative;
+			border-bottom: 1px solid #f1f1f1;
+			transition: all 0.25s ease;
+			&:hover {
+				background-color: #f9f9f9;
+				& > .nav-subnav-list {
+					display: block;
+				}
+			}
+			& > .nav-subnav-list {
+				display: none;
+				top: 0;
+				left: calc(100% + 2rem);
+				&::before {
+					content: "";
+					position: absolute;
+					top: 0;
+					left: -2.5rem;
+					width: 2.5rem;
+					height: 100%;
+				}
+			}
+		}
+		&-link {
+			display: block;
+			padding: 1.5rem 2.5rem;
+			text-transform: capitalize;
+			text-decoration: none;
+			letter-spacing: 0.2rem;
+			font-size: 1.4rem;
+			line-height: 1.4rem;
+			color: $text-color;
+			&--hot {
+				@include labelMenu("hot", $red-color);
+			}
+			&--new {
+				@include labelMenu("new", $green-color);
+			}
+			&--best {
+				@include labelMenu("best", $primary-color);
+			}
+			&--sub {
+				&::after {
+					content: "";
+					position: absolute;
+					top: 50%;
+					right: 0;
+					transform: translateY(-50%);
+					margin-right: 1.5rem;
+					border-width: 0.5rem;
+					border-style: solid;
+					border-color: transparent transparent transparent $text-color;
+				}
+			}
+		}
+	}
+}
+// Sidebar
+.sidebar {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 35rem;
+	height: 100%;
+	text-align: center;
+	padding: 2rem;
+	overflow-y: auto;
+	transform: translateX(100%);
+	transition: transform ease-in-out 0.5s;
+	background-color: #fff;
+	// Change background on Screen width <= 1200px
+	@include maxWidth(1200px) {
+		background-color: #555555;
+	}
+	// Close button
+	&-close {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		cursor: pointer;
+		&-icon,
+		&-icon-white {
+			width: 2.5rem;
+		}
+		&-icon {
+			// Hide on Screen width <= 1200px
+			@include maxWidth(1200px) {
+				display: none;
+			}
+		}
+		&-icon-white {
+			// Hide on Screen width > 1200px
+			display: none;
+			// Show on Screen width <= 1200px
+			@include maxWidth(1200px) {
+				display: block;
+			}
+		}
+		&:visited,
+		&:hover,
+		&:active {
+			background-color: transparent;
+		}
+	}
+	// Sidebar content on Screen width > 1200px
+	&-wrapper {
+		overflow: hidden;
+		// Hide on Screen width <= 1200px
+		@include maxWidth(1200px) {
+			display: none;
+		}
+	}
+	// Sidebar Header
+	&-header {
+		margin-bottom: 2.5rem;
+		&-caption {
+			letter-spacing: 0.2rem;
+			text-transform: uppercase;
+			color: $text-color;
+			line-height: 2.7;
+		}
+		&-title {
+			font-size: 2.5rem;
+			line-height: 3rem;
+			font-weight: bold;
+			letter-spacing: 0;
+			text-transform: uppercase;
+			display: inline-block;
+			color: $title-color;
+		}
+	}
+	// Sidebar List Packages
+	&-packages {
+		margin-bottom: 2rem;
+		&-item {
+			@include flexbox(stretch);
+			padding: 1.5rem;
+		}
+		&-image {
+			width: 10rem;
+			height: 10rem;
+			flex-shrink: 0;
+		}
+		&-info {
+			@include flexbox(flex-start, flex-start, column, wrap);
+			text-align: left;
+			margin-left: 3rem;
+			&-title {
+				display: block;
+				font-size: 2rem;
+				line-height: 2rem;
+				font-weight: normal;
+				letter-spacing: 0;
+				text-decoration: none;
+				color: $title-color;
+				margin-top: 0.5rem;
+				margin-bottom: 1rem;
+			}
+			&-link {
+				text-decoration: none;
+				margin-bottom: 2rem;
+				// @include flexbox(center, flex-start);
+			}
+			&-image {
+				width: 1.4rem;
+				display: inline-block;
+				margin-right: 0.5rem;
+			}
+			&-location {
+				color: $text-color;
+				letter-spacing: 0.2rem;
+				font-size: 1.5rem;
+				line-height: 1.5rem;
+			}
+			&-price {
+				color: #fff;
+			}
+		}
+	}
+	&-single-package {
+		padding: 0 1.5rem;
+		margin-top: 4rem;
+		margin-bottom: 4rem;
+	}
+	// Sidebar on Mobile
+	&-mobile {
+		text-align: left;
+		padding: 4rem;
+		// Hide on PC
+		display: none;
+		// Show on Mobile devices width <= 1200px
+		@include maxWidth(1200px) {
+			display: block;
+		}
+		&-item {
+			margin-bottom: 3rem;
+			padding: 0 1.5rem;
+		}
+		&-sub-item {
+			padding-left: 2rem;
+		}
+		&-link,
+		&-sub-link {
+			text-decoration: none;
+			text-transform: uppercase;
+			color: #fff;
+			user-select: none;
+		}
+		&-link {
+			font-size: 2.4rem;
+			line-height: 2.4rem;
+			font-weight: bold;
+			letter-spacing: 0;
+		}
+		&-sub-link {
+			font-size: 1.4rem;
+			line-height: 3.5rem;
+			letter-spacing: 0.2rem;
+			font-weight: normal;
+		}
+	}
+}

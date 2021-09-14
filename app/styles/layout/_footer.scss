@@ -1,0 +1,133 @@
+.footer {
+	background: url("../images/footer-bg.jpg") center center / cover no-repeat;
+	padding-bottom: 8rem;
+	&-top {
+		padding-top: 8rem;
+		padding-left: 20rem;
+		padding-right: 20rem;
+		align-items: flex-end;
+		&-left {
+			.block-title {
+				text-transform: none;
+				margin-bottom: 4rem;
+			}
+		}
+		&-right {
+			margin-bottom: 4rem;
+			&--input {
+				background-color: #f9f9f9;
+				border: 1px solid #f1f1f1;
+				padding: 1rem 2rem;
+				color: #a3a3a3;
+				border-radius: 3rem;
+				min-width: 25.75rem;
+				margin-right: 2rem;
+			}
+		}
+	}
+	&-content {
+		background-color: #fff;
+		padding: 3.5rem 3rem;
+		&-logo {
+			margin-top: 1rem;
+			line-height: 2.7rem;
+			margin-bottom: 2.5rem;
+		}
+		&-img {
+			width: 15rem;
+		}
+		&-desc {
+			margin-bottom: 2.5rem;
+			padding-right: 2rem;
+			@include textClamp(3);
+		}
+		&-social {
+			margin-bottom: 1rem;
+			&--icon {
+				width: 2.2rem;
+				height: 2.2rem;
+				margin-right: 2rem;
+			}
+		}
+		&-right {
+			&--wrapper {
+				margin-top: 2.5rem;
+			}
+		}
+		&-title {
+			text-transform: uppercase;
+			color: $title-color;
+			font-size: 1.4rem;
+			line-height: 1.4rem;
+			letter-spacing: 0.2rem;
+			font-weight: bold;
+			margin-bottom: 3.5rem;
+		}
+		&-item {
+			&--img {
+				width: 1rem;
+				margin-right: 1rem;
+			}
+			&--link {
+				text-decoration: none;
+				font-size: 1.4rem;
+				line-height: 2.7rem;
+				letter-spacing: 0.1rem;
+			}
+		}
+	}
+	&-bottom {
+		text-transform: uppercase;
+		background-color: $primary-color;
+		color: #fff;
+		font-size: 1.2rem;
+		line-height: 1.2rem;
+		letter-spacing: 0.2rem;
+		padding-left: 2rem;
+		padding-right: 2rem;
+		&-left,
+		&-right {
+			padding: 2rem;
+		}
+		&-right {
+			text-align: right;
+		}
+	}
+	@media (min-width: 1024px) and (max-width: 1239px) {
+		&-top {
+			padding-left: unset;
+			padding-right: unset;
+		}
+	}
+	@media (min-width: 320px) and (max-width: 1023px) {
+		&-top {
+			padding-left: unset;
+			padding-right: unset;
+			&-left,
+			&-right {
+				width: 100%;
+				text-align: center;
+			}
+			&-left {
+				.block-caption,
+				.block-title {
+					text-align: center !important;
+				}
+			}
+			&-right {
+				@include flexbox(center, center, row, nowrap);
+				padding-left: 1.5rem !important;
+				padding-right: 1.5rem !important;
+				&--input {
+					width: 100%;
+				}
+			}
+		}
+		&-bottom {
+			&-left,
+			&-right {
+				text-align: center;
+			}
+		}
+	}
+}

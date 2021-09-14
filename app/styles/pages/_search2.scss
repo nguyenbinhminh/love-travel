@@ -1,0 +1,307 @@
+.nav-link--special {
+	background-color: $red-color;
+}
+.package .block-caption,
+.package .block-title {
+	display: none;
+}
+.package.grid.wide {
+	margin-top: -2.36rem;
+}
+.header {
+	background: url("../images/holiday-bg.jpg") center center / cover no-repeat;
+	padding-top: 20rem;
+	padding-bottom: 5rem;
+	position: relative;
+	top: -10.36rem;
+	.block-caption {
+		color: #fff;
+	}
+	.block-title {
+		color: #fff;
+		text-transform: none;
+		margin-bottom: 5.5rem;
+	}
+	&-filter {
+		background-color: #fff;
+		padding: 3.5rem;
+		position: relative;
+		&-other {
+			margin-top: 5rem;
+			@include flexbox(center, space-between);
+			@media (min-width: 320px) and (max-width: 1023px) {
+				display: none;
+			}
+		}
+	}
+}
+.filter {
+	&-wrapper {
+		margin-bottom: 3.5rem;
+	}
+	&-item {
+		&-container {
+			padding: 1.5rem;
+		}
+	}
+	&-label {
+		margin-bottom: 2rem;
+		@include flexbox(center, space-between);
+		&--text {
+			color: $title-color;
+			font-weight: bold;
+			font-size: 1.5rem;
+			line-height: 1.5rem;
+			text-transform: capitalize;
+		}
+	}
+	&-select {
+		position: relative;
+		select {
+			background-color: $bg-input-color;
+			border: 1px solid $border-color;
+			padding: 1rem 3rem;
+			border-radius: 3rem;
+			width: 100%;
+			color: $text-input-color;
+			font-size: 1.5rem;
+			cursor: pointer;
+			// Hide arrow select
+			appearance: none;
+		}
+	}
+	&-icon {
+		width: 1.8rem;
+		position: absolute;
+		top: 50%;
+		right: 3rem;
+		transform: translateY(-50%);
+		cursor: pointer;
+	}
+	&-input {
+		position: relative;
+		&-date {
+			background: $bg-input-color;
+			border: 1px solid $border-color;
+			padding: 1rem 3rem;
+			border-radius: 3rem;
+			width: 100%;
+			color: $text-input-color;
+			font-size: 1.5rem;
+			cursor: pointer;
+			&::-webkit-inner-spin-button {
+				display: none;
+			}
+			&::-webkit-calendar-picker-indicator {
+				opacity: 0;
+			}
+			&::-webkit-input-placeholder {
+				color: $text-input-color;
+			}
+		}
+	}
+	&-price {
+		&-line {
+			margin-bottom: 2rem;
+		}
+		&-progress {
+			height: 100%;
+			width: 100%;
+			background-color: $primary-color;
+			position: relative;
+		}
+		&-content {
+			@include flexbox(center);
+			input {
+				margin-right: 1rem;
+			}
+		}
+	}
+	&-more {
+		width: 100%;
+		line-height: 2.7rem;
+		display: block;
+		&-wrapper {
+			width: 60%;
+			margin: 0 auto;
+			text-align: center;
+			margin-bottom: -4.7rem;
+		}
+		&-title {
+			display: inline-block;
+			background-color: #e27557;
+			font-size: 1.4rem;
+			line-height: 1.4rem;
+			letter-spacing: 0.2rem;
+			padding: 0.7rem 2rem;
+			color: #fff;
+			border-radius: 3rem;
+			cursor: pointer;
+			&:hover .filter-more-type {
+				display: block;
+			}
+		}
+		&-icon {
+			width: 1rem;
+			margin-right: 0.5rem;
+		}
+		&-text {
+			display: inline-block;
+			text-transform: uppercase;
+		}
+		&-type {
+			display: none;
+			padding: 2.5rem;
+			background-color: #fff;
+			position: absolute;
+			top: calc(100% + 4rem);
+			left: 50%;
+			transform: translateX(-50%);
+			width: 60%;
+			border: 1px solid #f1f1f1;
+			border-top-width: 0;
+			box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+			cursor: default;
+			z-index: 10;
+			&::before {
+				content: "";
+				position: absolute;
+				top: -2rem;
+				left: 50%;
+				transform: translateX(-50%);
+				border-width: 1rem;
+				border-style: solid;
+				border-color: transparent transparent #fff transparent;
+			}
+			&::after {
+				content: "";
+				position: absolute;
+				width: 100%;
+				height: 4rem;
+				top: -4rem;
+				right: 0rem;
+				cursor: pointer;
+				// background-color: #000;
+			}
+			&-container {
+				padding: 1rem;
+			}
+			&-title {
+				color: $title-color;
+				font-weight: bold;
+				font-size: 1.5rem;
+				line-height: 1.5rem;
+				margin-bottom: 2rem;
+				text-align: left;
+			}
+			&-list {
+				padding: 1rem;
+			}
+			&-item {
+				@include flexbox(center);
+				font-size: 1.4rem;
+				line-height: 2.7rem;
+				color: $text-color;
+				input {
+					margin-right: 1rem;
+				}
+				label {
+					cursor: pointer;
+				}
+			}
+		}
+	}
+	&-other {
+		&-left {
+			padding: 1.5rem;
+			@include flexbox(center);
+		}
+		&-right {
+			@include flexbox(center);
+		}
+	}
+	&-left {
+		&-price {
+			margin-right: 3rem;
+		}
+		&-title {
+			@include flexbox(center);
+			position: relative;
+			&:hover {
+				& .filter-left-list {
+					display: block;
+				}
+			}
+			&-text {
+				color: #fff;
+				text-transform: uppercase;
+				font-size: 1.4rem;
+				line-height: 2.7rem;
+				letter-spacing: 0.2rem;
+				margin-right: 1rem;
+			}
+			&-icon {
+				width: 1rem;
+			}
+		}
+		&-list {
+			display: none;
+			background-color: #555555;
+			min-width: 16rem;
+			position: absolute;
+			top: 100%;
+			left: 0;
+		}
+		&-item {
+			text-transform: uppercase;
+			font-size: 1.1rem;
+			line-height: 1.1rem;
+			letter-spacing: 0.2rem;
+			padding: 1.5rem 2rem;
+			&:hover {
+				background-color: #5d5d5d;
+			}
+		}
+		&-link {
+			display: block;
+			color: $text-color;
+			text-decoration: none;
+		}
+	}
+	&-view {
+		&-list,
+		&-thumb {
+			display: none;
+		}
+		&-list {
+			&:checked {
+				& + .filter-view-label-list {
+					background: url("../images/icon-list-white.png") center center / cover no-repeat;
+				}
+				& ~ .filter-view-label-thumb {
+					background: url("../images/icon-menu-white-opacity.png") center center / cover no-repeat;
+				}
+			}
+		}
+		&-label {
+			display: block;
+			width: 2.5rem;
+			height: 2.5rem;
+			margin-right: 2rem;
+			cursor: pointer;
+			&-list {
+				background: url("../images/icon-list-white-opacity.png") center center / cover no-repeat;
+				transition: all 0.25s linear;
+			}
+			&-thumb {
+				background: url("../images/icon-menu-white.png") center center / cover no-repeat;
+				transition: all 0.25s linear;
+			}
+		}
+		&-icon {
+			width: 2.5rem;
+		}
+	}
+}
+
+// Date picker

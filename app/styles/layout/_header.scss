@@ -1,0 +1,142 @@
+// Header
+.header {
+	position: relative;
+	// Header Content
+	&-content {
+		&-bg {
+			background: linear-gradient(
+					to bottom,
+					rgba(101, 100, 96, 1) 0%,
+					rgba(101, 100, 96, 0) 45%,
+					rgba(101, 100, 96, 0) 45%,
+					rgba(101, 100, 96, 0.8) 100%
+				),
+				url("../images/header-bg.jpg");
+			// background-size: cover;
+			background-attachment: scroll;
+			background-position: 50% 0%;
+			background-repeat: no-repeat;
+			position: absolute;
+			top: -27rem;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: -1;
+			@include maxWidth(1023px) {
+				top: 0;
+			}
+		}
+		&-wrapper {
+			@include flexbox(center, center, column);
+			padding-top: 17rem;
+			padding-bottom: 21.5rem;
+			position: relative;
+			@include maxWidth(1023px) {
+				padding-top: 10rem;
+				padding-bottom: unset;
+				padding-left: 1.5rem;
+				padding-right: 1.5rem;
+			}
+		}
+		&-title {
+			@include resFont(320px, 1200px, 20px, 50px);
+			line-height: 5rem;
+			letter-spacing: 0;
+			font-weight: bold;
+			color: #fff;
+			margin-bottom: 3.5rem;
+			user-select: none;
+			.text-underline {
+				@include underlineEffect($violet-color);
+			}
+		}
+		&-caption {
+			@include resFont(320px, 1200px, 14px, 20px);
+			line-height: 2rem;
+			letter-spacing: 0.4rem;
+			font-weight: normal;
+			color: #fff;
+			text-transform: uppercase;
+			user-select: none;
+			margin-bottom: 6.5rem;
+		}
+		// Select Option
+		&-select {
+			margin-bottom: 5.5rem;
+			position: relative;
+			select {
+				outline: 0;
+				padding: 1rem 2.5rem;
+				background-color: #f9f9f9;
+				border: 1px solid #f1f1f1;
+				color: #a3a3a3;
+				border-radius: 3rem;
+				cursor: pointer;
+				min-width: 37rem;
+				// Hide arrow select
+				appearance: none;
+			}
+			@include maxWidth(1023px) {
+				width: 100%;
+				select {
+					width: 100%;
+				}
+			}
+		}
+		// Icon Search of Select Option
+		&-search {
+			position: absolute;
+			top: 50%;
+			right: 0;
+			transform: translateY(-50%);
+			margin-right: 2.5rem;
+			cursor: pointer;
+			&-icon {
+				width: 1.7rem;
+				height: 1.7rem;
+			}
+		}
+		// List Icon & Text
+		&-list {
+			@include flexbox(center, center, row, wrap);
+			width: 100%;
+		}
+		&-item {
+			@include flexbox(center, center, column);
+			min-width: 11.2rem;
+			min-height: 10.5rem;
+			background: rgba(0, 0, 0, 0.21);
+			& + .header-content-item {
+				margin-left: 3rem;
+			}
+			@include maxWidth(1023px) {
+				width: 100%;
+				flex-wrap: wrap;
+				margin-bottom: 2rem;
+				& + .header-content-item {
+					margin-left: 0;
+				}
+			}
+		}
+		&-link {
+			display: block;
+			@include flexbox(center, center, column);
+			padding: 1.5rem;
+			text-decoration: none;
+			width: 100%;
+		}
+		&-image {
+			width: 4rem;
+			flex-shrink: 0;
+			margin-bottom: 0.5rem;
+		}
+		&-text {
+			text-transform: uppercase;
+			color: #fff;
+			letter-spacing: 0.2rem;
+			font-size: 1.1rem;
+			line-height: 1.1rem;
+			flex-shrink: 0;
+		}
+	}
+}

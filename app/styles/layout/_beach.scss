@@ -1,0 +1,190 @@
+.beach {
+	&-wrapper {
+		margin-top: 6rem;
+		@include maxWidth(1182px) {
+			margin-left: 1.5rem !important;
+			margin-right: 1.5rem !important;
+		}
+	}
+	&-info {
+		padding: 2rem 3.5rem 2rem 1.5rem;
+		&-desc {
+			margin-bottom: 2rem;
+			line-height: 2.7rem;
+		}
+		&-price {
+			margin-top: 3rem;
+			margin-bottom: 3rem;
+			text-transform: uppercase;
+			&-origin {
+				font-size: 3rem;
+				line-height: 3rem;
+				text-decoration: line-through;
+			}
+			&-sale {
+				font-size: 3rem;
+				line-height: 3rem;
+			}
+		}
+	}
+	&-slider {
+		// @include flexbox(center, center);
+		width: 100%;
+		position: relative;
+		&-images {
+			width: 100%;
+			padding: 2rem 1.5rem 2rem 3.5rem;
+			@include maxWidth(1182px) {
+				padding: unset;
+			}
+		}
+		&-image {
+			width: 100%;
+			object-fit: cover;
+			height: 41rem;
+		}
+		&-count {
+			width: 100%;
+			position: absolute;
+			bottom: -3.5rem;
+			left: calc(50% + 1rem);
+			transform: translateX(-50%);
+			padding-left: 20%;
+			padding-right: 20%;
+			&-list {
+				@include flexbox(center, center);
+				background-color: $primary-color;
+				width: 100%;
+			}
+			&-item {
+				width: 25%;
+				@include flexbox(center, center, column, wrap);
+				color: #fff;
+				position: relative;
+				&:not(:last-child)::after {
+					position: absolute;
+					content: "/";
+					top: 30px;
+					right: -12px;
+					font-size: 60px;
+					color: #000;
+					opacity: 0.05;
+					font-weight: 100;
+					z-index: 9;
+					line-height: 60px;
+				}
+			}
+			&-num {
+				@include resFont(320px, 1200px, 16px, 35px);
+				line-height: 3.5rem;
+				font-weight: normal;
+				flex-shrink: 0;
+				text-align: center;
+				margin-top: 3rem;
+			}
+			&-txt {
+				@include resFont(320px, 1200px, 10px, 13px);
+				line-height: 1.3rem;
+				letter-spacing: 0.2rem;
+				text-transform: uppercase;
+				margin-top: 1rem;
+				flex-shrink: 0;
+				text-align: center;
+				margin-bottom: 3rem;
+			}
+		}
+	}
+	@include maxWidth(1182px) {
+		&-info,
+		&-slider {
+			width: 100%;
+		}
+	}
+}
+// Slick Slider
+.slick-dots {
+	position: absolute;
+	top: 5rem;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	text-align: center;
+	li {
+		position: relative;
+		display: inline-block;
+		// width: 20px;
+		// height: 20px;
+		margin: 0 5px;
+		padding: 0;
+		cursor: pointer;
+		button {
+			background-color: rgba(#fff, 0.5);
+		}
+	}
+	li.slick-active {
+		button {
+			background-color: #fff;
+		}
+	}
+	button {
+		font-size: 0;
+		line-height: 0;
+		display: block;
+		width: 6rem;
+		height: 0.4rem;
+		cursor: pointer;
+		color: transparent;
+		border: 0;
+		outline: none;
+		background: transparent;
+	}
+}
+.benefit {
+	&-wrapper {
+		margin-top: 10rem;
+		margin-bottom: 1rem;
+	}
+	&-item {
+		@include flexbox(stretch);
+		@include maxWidth(1182px) {
+			&:not(:last-child) {
+				padding-bottom: 3rem;
+			}
+		}
+	}
+	&-icon {
+		flex-shrink: 0;
+		margin-right: 2rem;
+		img {
+			width: 5rem;
+			height: 5rem;
+		}
+	}
+	&-info {
+		@include flexbox(flex-start, flex-start, column, wrap);
+		&-title {
+			font-size: 2.4rem;
+			line-height: 2.4rem;
+			text-transform: capitalize;
+			font-weight: bold;
+			color: $title-color;
+			@include textClamp;
+		}
+		&-desc {
+			font-size: 1.4rem;
+			line-height: 2.4rem;
+			color: $text-color;
+			margin: 2rem 0;
+			@include textClamp(5);
+		}
+		&-link {
+			font-size: 1.4rem;
+			line-height: 1.4rem;
+			color: $primary-color;
+			text-decoration: none;
+			margin-top: auto;
+		}
+	}
+}

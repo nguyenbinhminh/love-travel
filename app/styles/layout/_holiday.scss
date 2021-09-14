@@ -1,0 +1,38 @@
+.holiday {
+	margin-top: 6rem;
+	background: url("../images/holiday-bg.jpg") center center / cover no-repeat;
+	&-wrapper {
+		padding: 5rem 0;
+	}
+	&-middle {
+		&-left,
+		&-right {
+			padding-top: 2rem;
+			padding-bottom: 2rem;
+		}
+		&-left {
+			@include flexbox(flex-start, flex-start, column, wrap);
+		}
+		&-right {
+			@include flexbox(center, center);
+		}
+	}
+	&-title {
+		font-size: 4.5rem;
+		line-height: 4.5rem;
+		letter-spacing: 0;
+		font-weight: bold;
+		color: #fff;
+	}
+	&-btn {
+		background-color: #fff;
+		color: $red-color;
+	}
+	@media (min-width: 1024px) and (max-width: 1239px) {
+		&-middle {
+			&-right {
+				display: flex !important;
+			}
+		}
+	}
+}

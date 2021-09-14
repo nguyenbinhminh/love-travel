@@ -1,0 +1,229 @@
+//- Sub Nav
+mixin subNavItem(linkSubNav="", hrefSubNav="#", type="")
+	if linkSubNav !== ""
+		case type
+			when ""
+				li.nav-subnav-item
+					a(href= hrefSubNav).nav-subnav-link= linkSubNav
+					if block
+						block
+			when "hot"
+				li.nav-subnav-item
+					a(href= hrefSubNav).nav-subnav-link.nav-subnav-link--hot= linkSubNav
+					if block
+						block
+			when "best"
+				li.nav-subnav-item
+					a(href= hrefSubNav).nav-subnav-link.nav-subnav-link--best= linkSubNav
+					if block
+						block
+			when "new"
+				li.nav-subnav-item
+					a(href= hrefSubNav).nav-subnav-link.nav-subnav-link--new= linkSubNav
+					if block
+						block
+			when "sub"
+				li.nav-subnav-item
+					a(href= hrefSubNav).nav-subnav-link.nav-subnav-link--sub= linkSubNav
+					if block
+						block
+
+//- Nav
+mixin navItem(link="", href="#", type="")
+	if link !== ""
+		case type
+			when ""
+				li.nav-item
+					a(href= href).nav-link= link
+					if block
+						block
+			when "special"
+				li.nav-item
+					a(href= href).nav-link.nav-link--special= link
+					if block
+						block
+
+//- Header content List - Item
+mixin contentItem(href="", src="", text="")
+	li.header-content-item
+		if href !== ""
+			a(href= href).header-content-link
+				if src !== ""
+					img(src= src, alt="Icon Relax").header-content-image
+					if text !== ""
+						h3.header-content-text= text
+					else
+						span.text-warning Thiếu tiêu đề cho ảnh rồi!
+				else
+					span.text-warning Thiếu đường dẫn hình ảnh rồi!
+		else
+			span.text-warning Cấu trúc contentItem(href, src, text) Thiếu link cho item này rồi!
+
+//- Header Sidebar on Mobile
+mixin sidebarMobileSubItem(link="", href="")
+	if link !== ""
+		li.sidebar-mobile-sub-item
+			a(href= href).sidebar-mobile-sub-link= link
+			if block
+				block
+	else
+		span.text-warning Thiếu link rồi
+
+mixin sidebarMobileItem(link="", href="")
+	if link !== ""
+		li.sidebar-mobile-item
+			a(href= href).sidebar-mobile-link= link
+			if block
+				block
+	else
+		span.text-warning Thiếu link rồi
+
+//- Sidebar Header
+mixin sidebarHeader(caption="", title="", typeUnderline="")
+	if caption !== ""
+		h3.sidebar-header-caption= caption
+		case typeUnderline
+			when ""
+				h2.sidebar-header-title.text-underline= title
+			when "yellow--light"
+				h2.sidebar-header-title.title-underline-yellow--light.text-underline= title
+			when "orange"
+				h2.sidebar-header-title.title-underline-orange.text-underline= title
+			when "yellow"
+				h2.sidebar-header-title.title-underline-yellow.text-underline= title
+			when "red"
+				h2.sidebar-header-title.title-underline-red.text-underline= title
+			when "green"
+				h2.sidebar-header-title.title-underline-green.text-underline= title
+			when "blue"
+				h2.sidebar-header-title.title-underline-blue.text-underline= title
+	else
+		span.text-warning Thiếu caption
+
+//- Sidebar Packages
+mixin sidebarPackagesItem(srcImage= "", place= "", href= "", location="", price="", type="")
+	li.sidebar-packages-item
+		img(src= srcImage, alt= place).sidebar-packages-image
+		.sidebar-packages-info
+			a(href= href).sidebar-packages-info-title= place
+			a(href= href).sidebar-packages-info-link
+				img(src="./images/icon-location.png", alt="Icon Location").sidebar-packages-info-image
+				span.sidebar-packages-info-location= location
+			case type
+				when ""
+				when "orange"
+					h3.sidebar-packages-info-price.btn.btn-sm.lg-orange= price
+				when "orange-rev"
+					h3.sidebar-packages-info-price.btn.btn-sm.lg-orange-rev= price
+				when "red"
+					h3.sidebar-packages-info-price.btn.btn-sm.lg-red= price
+				when "violet"
+					h3.sidebar-packages-info-price.btn.btn-sm.lg-violet= price
+				when "green"
+					h3.sidebar-packages-info-price.btn.btn-sm.lg-green= price
+				when "blue"
+					h3.sidebar-packages-info-price.btn.btn-sm.lg-blue= price
+
+//- Single Package
+mixin singlePackage(srcImage= "", srcIcon= "", title= "", quantity= "0", linkPackages= {})
+	.single-package-image(style= `background: linear-gradient(to bottom, rgba(101, 100, 96, 0) 0%, rgba(101, 100, 96, 0.1) 60%, rgba(101, 100, 96, 0.65) 100%), url(${srcImage}) center center / cover no-repeat`)
+		.single-package-info
+			img(src= srcIcon, alt="Icon").single-package-icon
+			.single-package-detail
+				h3.single-package-title= title
+				h4.single-package-quantity= quantity + " Packages"
+		.single-package-gradient
+			h3.single-package-title Packages
+			ul.single-package-list
+				each val, key in linkPackages
+					li.single-package-item
+						a(href= val).single-package-link= key
+			a(href="#").btn.btn-sm.single-package-btn View Destination
+
+//- Block Title
+mixin blockTitle(caption= "", wordNormal= "", wordUnderline= "", colorUnderline= "", align= "center")
+	if align == "left"
+		h3.block-caption(class=`txt-${align}`)= caption
+		h2.block-title(class=`txt-${align}`) #{wordNormal} #[span(class=`title-underline-${colorUnderline}`) #{wordUnderline}]
+	if align == "right"
+		h3.block-caption(class=`txt-${align}`)= caption
+		h2.block-title(class=`txt-${align}`) #{wordNormal} #[span(class=`title-underline-${colorUnderline}`) #{wordUnderline}]
+	if align == "center"
+		h3.block-caption(class=`txt-${align}`)= caption
+		h2.block-title(class=`txt-${align}`) #{wordNormal} #[span(class=`title-underline-${colorUnderline}`) #{wordUnderline}]
+
+//- Beach Info
+mixin beachInfoDesc(descs= [])
+	each desc in descs
+		p.beach-info-desc.color-text= desc
+
+//- Beach Slider Count
+mixin beachSliderCount(num= "", type= "")
+	.beach-slider-count-item
+		h2.beach-slider-count-num= num
+		h3.beach-slider-count-txt= type
+
+//- Benefit
+mixin benefitItem(srcImg= "", title="", desc="", link="#")
+	.benefit-item.col.l-4.m-12.c-12
+		.benefit-icon
+			img(src= srcImg, alt="Icon")
+		.benefit-info
+			h2.benefit-info-title= title
+			p.benefit-info-desc= desc
+			a(href= href).benefit-info-link View more
+
+//- Package Item
+-var placeNames={berlin:{name:"Berlin", link:"#"}, hongkong:{name:"Hong Kong", link:"#"}, tuscany:{name:"Tuscany", link:"#"}, phuket:{name:"Phuket", link:"#"}, amsterdam:{name:"Amsterdam", link:"#"}, sanfrancisco:{name:"San Francisco", link:"#"}};
+
+-var placeLocations={europe:{name:"Europe", link:"#"}, thailandian:{name:"Thailandian", link:"#"}, asia:{name:"Asia", link:"#"}, italy:{name:"Italy", link:"#"}, netherlands:{name:"Netherlands",link:"#"}, us:{name:"United States", link:"#"}};
+
+-var placeImgs={"berlin":"./images/package-berlin.jpg", "amsterdam":"./images/package-amsterdam.jpg", "hongkong":"./images/package-hongkong.jpg", "phuket":"./images/package-phuket.jpg", "sanfrancisco":"./images/package-sanfrancisco.jpg", "tuscany":"./images/package-tuscany.jpg"};
+
+-var placeIcons={"arch":"./images/destination-europe-icon-arch.png","torigate":"./images/destination-asia-icon-torii-gate.png", "pisa":"./images/destination-italy-icon-pisa.png", "eye":"./images/destination-netherlands-icon-london-eye.png", "buddha":"./images/destination-thailandian-icon-buddha.png", "goldengate":"./images/destination-US-icon-golden-gate.png"};
+
+-var placeTypes={type: {relax: {text:"Relax", link:"#"}, cultural:{text:"Cultural", link:"#"}, sport:{text:"Sport", link:"#"}, history:{text:"History", link:"#"}}};
+
+mixin packageItem(placeName=placeNames.berlin.name, placeLink=placeNames.berlin.link, placeImg=placeImgs.berlin, placeIcon=placeIcons.arch, colorIcon="orange", placeLocation=placeLocations.europe.name, placeLocationLink=placeLocations.europe.link, placeType="Cultural", placeTypePlus="Relax", priceOrigin=1000, priceSale=500, placeDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque.", colorButton="yellow", sale=false)
+	.package-item.col.l-4.m-12.c-12
+		.package-item-container
+			.package-media
+				img(src=placeImg, alt=placeName).package-media-image
+				a(href=placeLink, class=`lg-${colorIcon}`).package-media-icon
+					img(src=placeIcon, alt="Icon")
+				if sale !== false
+					a(href="#").package-media-label Sale
+			.package-item-wrapper
+				.package-info
+					a(href=placeLink).package-info-place.color-title=placeName
+					a(href=placeLocationLink).package-info-location
+						img(src="./images/icon-location.png", alt="Icon").package-info-location-icon
+						span.package-info-location-text.color-text=placeLocation
+				.package-type
+					.package-type-link
+						span.package-type-text #[a(href="#").color-title= placeType]
+						span.package-type-text #[a(href="#").color-title= placeTypePlus] #[span(class=`bg-${colorButton}`) + 1]
+					if priceSale !== 0
+						a(href="#").package-type-price.color-title #[span.package-type-price-origin #{priceOrigin}] #{priceSale} $
+					else
+						a(href="#").package-type-price.color-title #{priceOrigin} $
+				p.package-desc.color-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque.
+				a(href=placeLink, class=`bg-${colorButton}`).package-btn.btn.btn-sm.color-white details
+
+//- Footer
+-var footerSocials={facebook:{name: "Facebook", link:"#", img: "./images/footer-icon-facebook.png"}, twitter:{name: "Twitter", link:"#", img: "./images/footer-icon-twitter.png"}, youtube:{name: "YouTube", link:"#", img: "./images/footer-icon-youtube.png"}, vimeo:{name: "Vimeo", link:"#", img: "./images/footer-icon-vimeo.png"}};
+
+mixin footerSocial(type="")
+	case type
+		when type = "facebook"
+			a(href= footerSocials.facebook.link).footer-content-social--link
+				img(src= footerSocials.facebook.img, alt= footerSocials.facebook.name).footer-content-social--icon
+		when type = "youtube"
+			a(href= footerSocials.youtube.link).footer-content-social--link
+				img(src= footerSocials.youtube.img, alt= footerSocials.youtube.name).footer-content-social--icon
+		when type = "twitter"
+			a(href= footerSocials.twitter.link).footer-content-social--link
+				img(src= footerSocials.twitter.img, alt= footerSocials.twitter.name).footer-content-social--icon
+		when type = "vimeo"
+			a(href= footerSocials.vimeo.link).footer-content-social--link
+				img(src= footerSocials.vimeo.img, alt= footerSocials.vimeo.name).footer-content-social--icon
