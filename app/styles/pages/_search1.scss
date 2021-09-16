@@ -1,0 +1,228 @@
+.header {
+	background: url("../images/holiday-bg.jpg") center center / cover no-repeat;
+	padding-bottom: 5rem;
+	&-content {
+		padding: 1.5rem;
+		&-title {
+			font-size: 3.5rem;
+			font-weight: bold;
+			text-align: left;
+			letter-spacing: 0;
+			line-height: 3rem;
+			margin-top: 10rem;
+			color: #fff;
+		}
+	}
+}
+.post {
+	margin-top: 6rem;
+	&-filter {
+		&-title {
+			color: $title-color;
+			font-size: 1.6rem;
+			line-height: 1.6rem;
+			font-weight: normal;
+			letter-spacing: 0.1rem;
+			margin-bottom: 2rem;
+			margin-top: 1rem;
+			&--header {
+				padding: 2rem 3rem;
+				background-color: $green-color;
+				color: #fff;
+				margin-bottom: 0;
+			}
+			&-wrapper {
+				@include flexbox(center, space-between);
+				cursor: pointer;
+			}
+		}
+		&-container {
+			padding: 2rem 3rem;
+			border-bottom: 1px solid $border-color;
+		}
+		&-item {
+			@include flexbox(center, flex-start);
+			margin-bottom: 2rem;
+			input {
+				margin-right: 1rem;
+			}
+			label {
+				color: $text-color;
+				cursor: pointer;
+			}
+		}
+		&-icon {
+			width: 1.2rem;
+			height: 1.2rem;
+		}
+	}
+	&-content {
+		margin-top: 1rem;
+		&-item {
+			margin-bottom: 3rem;
+		}
+		&-pagination {
+			@include flexbox(center, center);
+			margin-bottom: 6rem;
+		}
+	}
+	&-item {
+		&-wrapper {
+			border: 1px solid $border-color;
+		}
+		&-media {
+			position: relative;
+		}
+		&-info {
+			background-color: $yellow-color;
+		}
+		&-desc {
+			padding: 2rem;
+		}
+		&-text {
+			color: $text-color;
+			font-size: 1.4rem;
+			line-height: 2.7rem;
+			letter-spacing: 0.1rem;
+			margin-bottom: 2rem;
+		}
+		&-btn {
+			border: 1px solid $border-color;
+			border-radius: 0;
+			padding: 1rem 2rem;
+			color: $text-color;
+			font-size: 1.4rem;
+			line-height: 2.7rem;
+		}
+	}
+	&-media {
+		&-img {
+			display: block;
+			width: 100%;
+			object-fit: cover;
+		}
+		&-price {
+			color: $text-color;
+			padding: 1rem 2rem;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: #fff;
+			font-size: 1.4rem;
+			line-height: 2.7rem;
+			text-decoration: none;
+			&-origin {
+				text-decoration: line-through;
+			}
+		}
+	}
+	&-info {
+		&-name {
+			display: block;
+			padding: 2rem;
+			font-size: 2rem;
+			line-height: 2rem;
+			text-decoration: none;
+			text-transform: capitalize;
+			background-color: #555;
+			color: #fff;
+		}
+		&-list {
+			background-color: rgba(255, 255, 255, 0.1);
+		}
+		&-item {
+			color: #fff;
+			@include flexbox(center);
+		}
+		&-list {
+			@include flexbox(center, space-between);
+		}
+		&-link {
+			padding: 0.5rem 2rem;
+			display: block;
+			text-decoration: none;
+			font-size: 1.4rem;
+			line-height: 2.7rem;
+			color: #fff;
+			&-type {
+				padding-right: 0.5rem;
+			}
+		}
+		&-more {
+			display: inline-block;
+			padding: 0.4rem 0.8em;
+			font-size: 1.4rem;
+			line-height: 1.4rem;
+			position: relative;
+			&:hover .post-info-more-list {
+				display: block;
+			}
+			&-list {
+				display: none;
+				position: absolute;
+				top: calc(100% + 1rem);
+				right: 0;
+				background-color: #fff;
+				box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 10px;
+				border: 1px solid $border-color;
+				border-top-width: 0;
+				&::before {
+					content: "";
+					position: absolute;
+					top: -2rem;
+					right: 1rem;
+					border-width: 1rem;
+					border-style: solid;
+					border-color: transparent transparent #fff transparent;
+				}
+				&::after {
+					content: "";
+					position: absolute;
+					top: -2rem;
+					right: 0;
+					width: 6.5rem;
+					height: 2.5rem;
+				}
+			}
+			&-item {
+				margin-bottom: 0.5rem;
+			}
+			&-link {
+				text-decoration: none;
+				display: inline-block;
+				padding: 0.5rem 1.2rem;
+				color: $text-color;
+				&:first-child {
+					padding-top: 1rem;
+				}
+			}
+		}
+	}
+	&-pagination {
+		&-list {
+			@include flexbox(center, center);
+		}
+		&-item {
+			margin: 0 1rem;
+			&:hover .post-pagination-link {
+				background-color: $green-color;
+			}
+		}
+		&-link {
+			display: block;
+			padding: 1rem 1.5rem;
+			text-decoration: none;
+			background-color: $title-color;
+			color: #fff;
+			&--current {
+				background-color: $green-color;
+			}
+		}
+	}
+}
+.filter {
+	&-select {
+		padding: 2rem 3rem;
+		border: 1px solid $border-color;
+	}
+}

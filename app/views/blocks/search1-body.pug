@@ -1,0 +1,191 @@
+section.container.grid.wide
+	.post.row.lg-gutter
+		.post-filter.col.l-4
+			.post-filter-select
+				h2.post-filter-title.post-filter-title--header Select your destination:
+				.filter-select
+					select#destination(name="destination")
+						option(value="0") All Destination
+						option(value="1") Europe
+						option(value="2") &nbsp;&nbsp;- Italy
+						option(value="3") &nbsp;&nbsp;- Netherlands
+						option(value="4") Asia
+						option(value="5") &nbsp;&nbsp;- Thailandian
+						option(value="6") United States
+						option(value="7") Oceania
+			.post-filter-input.post-filter-container
+				h2.post-filter-title Select your date:
+				.filter-input
+					input(placeholder="mm-dd-yyyy" data-toggle="datepicker").filter-input-date
+					img(src="./images/icon-calendar-grey.png", alt="Icon calendar").filter-icon
+			.post-filter-typology.post-filter-container
+				h2.post-filter-title Typologies:
+				.post-filter-list.row
+					.post-filter-item.col.l-6.m-6.c-12
+						input(type="checkbox" id="filter-typology-relax")
+						label(for="filter-typology-relax") Relax
+					.post-filter-item.col.l-6.m-6.c-12
+						input(type="checkbox" id="filter-typology-cultural")
+						label(for="filter-typology-cultural") Cultural
+					.post-filter-item.col.l-6.m-6.c-12
+						input(type="checkbox" id="filter-typology-sport")
+						label(for="filter-typology-sport") Sport
+					.post-filter-item.col.l-6.m-6.c-12
+						input(type="checkbox" id="filter-typology-history")
+						label(for="filter-typology-history") History
+			.post-filter-price.post-filter-container
+				.filter-label
+					h2.post-filter-title Max price:
+					h2.filter-label--value #[span#filter-label--value 5000] $
+				.filter-price
+					.filter-price-line
+						input(type="range" class="filter-price-progress" id="filter-price-progress" min="0" max="10000" value="5000")
+					.filter-price-content
+						input(type="checkbox" id="promotions")
+						label(for="promotions" class="color-text") See only promotions
+			.post-filter-duration.post-filter-container
+				.post-filter-title-wrapper
+					h2.post-filter-title Durations:
+					img(src="./images/icon-down-arrow-grey.svg", alt="icon arrow down").post-filter-icon
+				ul.post-filter-list.row
+					li.post-filter-item.col.l-6.m-6.c-12
+						input(type="checkbox" id="filter-duration-1-3-days").post-filter-input
+						label(for="filter-duration-1-3-days").post-filter-label 1 - 3 days
+					li.post-filter-item.col.l-6.m-6.c-12
+						input(type="checkbox" id="filter-duration-3-6-days").post-filter-input
+						label(for="filter-duration-3-6-days").post-filter-label 3 - 6 days
+					li.post-filter-item.col.l-6.m-6.c-12
+						input(type="checkbox" id="filter-duration-6-9-days").post-filter-input
+						label(for="filter-duration-6-9-days").post-filter-label 6 - 9 days
+					li.post-filter-item.col.l-6.m-6.c-12
+						input(type="checkbox" id="filter-duration-9-12-days").post-filter-input
+						label(for="filter-duration-9-12-days").post-filter-label 9 - 12 days
+			.post-filter-duration.post-filter-container
+				.post-filter-title-wrapper
+					h2.post-filter-title Difficulty:
+					img(src="./images/icon-down-arrow-grey.svg", alt="icon arrow down").post-filter-icon
+				ul.post-filter-list.row
+					li.post-filter-item.col.l-6.m-6.c-12
+						input(type="checkbox" id="filter-difficulty-hight").post-filter-input
+						label(for="filter-difficulty-hight").post-filter-label High
+					li.post-filter-item.col.l-6.m-6.c-12
+						input(type="checkbox" id="filter-difficulty-low").post-filter-input
+						label(for="filter-difficulty-low").post-filter-label Low
+					li.post-filter-item.col.l-6.m-6.c-12
+						input(type="checkbox" id="filter-difficulty-medium").post-filter-input
+						label(for="filter-difficulty-medium").post-filter-label Medium
+			.post-filter-duration.post-filter-container
+				.post-filter-title-wrapper
+					h2.post-filter-title Min Age:
+					img(src="./images/icon-down-arrow-grey.svg", alt="icon arrow down").post-filter-icon
+				ul.post-filter-list.row
+					li.post-filter-item.col.l-6.m-6.c-12
+						input(type="checkbox" id="filter-min-age-10").post-filter-input
+						label(for="filter-min-age-10").post-filter-label 10 years
+					li.post-filter-item.col.l-6.m-6.c-12
+						input(type="checkbox" id="filter-min-age-18").post-filter-input
+						label(for="filter-min-age-18").post-filter-label 18 years
+					li.post-filter-item.col.l-6.m-6.c-12
+						input(type="checkbox" id="filter-min-age-3").post-filter-input
+						label(for="filter-min-age-3").post-filter-label 3 years
+		.post-content.col.l-8
+			.post-content-list.row.lg-gutter
+				.post-content-item.col.l-6
+					.post-item-wrapper
+						.post-item-media
+							img(src="./images/package-berlin.jpg", alt="Berlin").post-media-img
+							a(href="#").post-media-price #[span.post-media-price-origin] 700 $
+						.post-item-info
+							a(href="#").post-info-name Berlin
+							.post-info-type.row.no-gutters.bg-yellow
+								a(href="#").post-info-link.post-info-location.col.l-6 Europe
+								ul.post-info-list.col.l-6
+									li.post-info-item
+										a(href="#").post-info-link.post-info-link-type Cultural
+										span ...
+									li.post-info-item.post-info-item-more
+										span.post-info-more.bg-yellow + 2
+											ul.post-info-more-list
+												li.post-info-more-item
+													a(href="#").post-info-more-link Relax
+												li.post-info-more-item
+													a(href="#").post-info-more-link Sport
+						.post-item-desc
+							p.post-item-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque.
+							a(href="#").btn.post-item-btn Details
+				.post-content-item.col.l-6
+					.post-item-wrapper
+						.post-item-media
+							img(src="./images/package-hongkong.jpg", alt="Hong Kong").post-media-img
+							a(href="#").post-media-price #[span.post-media-price-origin 1000] 500 $
+						.post-item-info
+							a(href="#").post-info-name Hong Kong
+							.post-info-type.row.no-gutters.bg-red
+								a(href="#").post-info-link.post-info-location.col.l-6 Aisa
+								ul.post-info-list.col.l-6
+									li.post-info-item
+										a(href="#").post-info-link.post-info-link-type History
+										span ...
+									li.post-info-item.post-info-item-more
+										span.post-info-more.bg-red + 2
+											ul.post-info-more-list
+												li.post-info-more-item
+													a(href="#").post-info-more-link Cultural
+												li.post-info-more-item
+													a(href="#").post-info-more-link Sport
+						.post-item-desc
+							p.post-item-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque.
+							a(href="#").btn.post-item-btn Details
+				.post-content-item.col.l-6
+					.post-item-wrapper
+						.post-item-media
+							img(src="./images/package-sanfrancisco.jpg", alt="San Francisco").post-media-img
+							a(href="#").post-media-price #[span.post-media-price-origin] 400 $
+						.post-item-info
+							a(href="#").post-info-name San Francisco
+							.post-info-type.row.no-gutters.bg-violet
+								a(href="#").post-info-link.post-info-location.col.l-6 United States
+								ul.post-info-list.col.l-6
+									li.post-info-item
+										a(href="#").post-info-link.post-info-link-type Sport
+										span ...
+									li.post-info-item.post-info-item-more
+										span.post-info-more.bg-violet + 2
+											ul.post-info-more-list
+												li.post-info-more-item
+													a(href="#").post-info-more-link Relax
+												li.post-info-more-item
+													a(href="#").post-info-more-link Cultural
+						.post-item-desc
+							p.post-item-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque.
+							a(href="#").btn.post-item-btn Details
+				.post-content-item.col.l-6
+					.post-item-wrapper
+						.post-item-media
+							img(src="./images/package-phuket.jpg", alt="Phuket").post-media-img
+							a(href="#").post-media-price #[span.post-media-price-origin] 1200 $
+						.post-item-info
+							a(href="#").post-info-name Phuket
+							.post-info-type.row.no-gutters.bg-primary
+								a(href="#").post-info-link.post-info-location.col.l-6 Thailandian
+								ul.post-info-list.col.l-6
+									li.post-info-item
+										a(href="#").post-info-link.post-info-link-type Relax
+										span ...
+									li.post-info-item.post-info-item-more
+										span.post-info-more.bg-primary + 2
+											ul.post-info-more-list
+												li.post-info-more-item
+													a(href="#").post-info-more-link Cultural
+												li.post-info-more-item
+													a(href="#").post-info-more-link History
+						.post-item-desc
+							p.post-item-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque.
+							a(href="#").btn.post-item-btn Details
+			.post-content-pagination
+				ul.post-pagination-list
+					li.post-pagination-item
+						a(href="#").post-pagination-link.post-pagination-link--current 1
+					li.post-pagination-item
+						a(href="#").post-pagination-link 2
+
