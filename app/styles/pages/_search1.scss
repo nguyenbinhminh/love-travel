@@ -72,6 +72,7 @@
 		}
 		&-media {
 			position: relative;
+			overflow: hidden;
 		}
 		&-info {
 			background-color: $yellow-color;
@@ -114,6 +115,22 @@
 			&-origin {
 				text-decoration: line-through;
 			}
+		}
+		&-label {
+			display: block;
+			background-color: $title-color;
+			color: #fff;
+			text-transform: uppercase;
+			font-size: 1.4rem;
+			line-height: 2.7rem;
+			letter-spacing: 0.1rem;
+			text-align: center;
+			position: absolute;
+			top: 2rem;
+			right: -7rem;
+			width: 20rem;
+			transform: rotate(45deg);
+			text-decoration: none;
 		}
 	}
 	&-info {

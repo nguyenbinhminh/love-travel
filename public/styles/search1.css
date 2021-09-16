@@ -1835,7 +1835,8 @@ p {
   .post-item-wrapper {
     border: 1px solid #f1f1f1; }
   .post-item-media {
-    position: relative; }
+    position: relative;
+    overflow: hidden; }
   .post-item-info {
     background-color: #ffd205; }
   .post-item-desc {
@@ -1870,6 +1871,22 @@ p {
     text-decoration: none; }
     .post-media-price-origin {
       text-decoration: line-through; }
+  .post-media-label {
+    display: block;
+    background-color: #555555;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    line-height: 2.7rem;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    position: absolute;
+    top: 2rem;
+    right: -7rem;
+    width: 20rem;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    text-decoration: none; }
   .post-info-name {
     display: block;
     padding: 2rem;
