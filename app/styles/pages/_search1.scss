@@ -97,6 +97,11 @@
 			color: $text-color;
 			font-size: 1.4rem;
 			line-height: 2.7rem;
+			transition: all 0.25s linear;
+			&:hover {
+				background-color: $title-color;
+				color: #fff;
+			}
 		}
 	}
 	&-media {

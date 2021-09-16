@@ -409,95 +409,49 @@
 			}
 		}
 	}
-	// &-other {
-	// 	&-left {
-	// 		padding: 1.5rem;
-	// 		@include flexbox(center);
-	// 	}
-	// 	&-right {
-	// 		@include flexbox(center);
-	// 	}
-	// }
-	// &-left {
-	// 	&-price {
-	// 		margin-right: 3rem;
-	// 	}
-	// 	&-title {
-	// 		@include flexbox(center);
-	// 		position: relative;
-	// 		&:hover {
-	// 			& .filter-left-list {
-	// 				display: block;
-	// 			}
-	// 		}
-	// 		&-text {
-	// 			color: #fff;
-	// 			text-transform: uppercase;
-	// 			font-size: 1.4rem;
-	// 			line-height: 2.7rem;
-	// 			letter-spacing: 0.2rem;
-	// 			margin-right: 1rem;
-	// 		}
-	// 		&-icon {
-	// 			width: 1rem;
-	// 		}
-	// 	}
-	// 	&-list {
-	// 		display: none;
-	// 		background-color: #555555;
-	// 		min-width: 16rem;
-	// 		position: absolute;
-	// 		top: 100%;
-	// 		left: 0;
-	// 	}
-	// 	&-item {
-	// 		text-transform: uppercase;
-	// 		font-size: 1.1rem;
-	// 		line-height: 1.1rem;
-	// 		letter-spacing: 0.2rem;
-	// 		padding: 1.5rem 2rem;
-	// 		&:hover {
-	// 			background-color: #5d5d5d;
-	// 		}
-	// 	}
-	// 	&-link {
-	// 		display: block;
-	// 		color: $text-color;
-	// 		text-decoration: none;
-	// 	}
-	// }
-	// &-view {
-	// 	&-list,
-	// 	&-thumb {
-	// 		display: none;
-	// 	}
-	// 	&-list {
-	// 		&:checked {
-	// 			& + .filter-view-label-list {
-	// 				background: url("../images/icon-list-white.png") center center / cover no-repeat;
-	// 			}
-	// 			& ~ .filter-view-label-thumb {
-	// 				background: url("../images/icon-menu-white-opacity.png") center center / cover no-repeat;
-	// 			}
-	// 		}
-	// 	}
-	// 	&-label {
-	// 		display: block;
-	// 		width: 2.5rem;
-	// 		height: 2.5rem;
-	// 		margin-right: 2rem;
-	// 		cursor: pointer;
-	// 		&-list {
-	// 			background: url("../images/icon-list-white-opacity.png") center center / cover no-repeat;
-	// 			transition: all 0.25s linear;
-	// 		}
-	// 		&-thumb {
-	// 			background: url("../images/icon-menu-white.png") center center / cover no-repeat;
-	// 			transition: all 0.25s linear;
-	// 		}
-	// 	}
-	// 	&-icon {
-	// 		width: 2.5rem;
-	// 	}
-	// }
+}
+// Header Package Page
+.header__package {
+	height: 32rem;
+	&-content {
+		&-title {
+			font-size: 3.5rem;
+			line-height: 3.5rem;
+			font-weight: bold;
+			color: #fff;
+			margin-top: 10rem;
+			text-transform: capitalize;
+			@include maxWidth(1199px) {
+				text-align: center;
+			}
+		}
+		&-info {
+			@include flexbox(center);
+			margin-top: 2rem;
+			@include maxWidth(1199px) {
+				justify-content: center;
+			}
+		}
+	}
+	&-info {
+		&-item {
+			@include flexbox(center);
+			& + .header__package-info-item {
+				margin-left: 3rem;
+			}
+		}
+		&-icon {
+			width: 1.4rem;
+			height: 1.4rem;
+			margin-right: 1rem;
+		}
+		&-text {
+			text-transform: uppercase;
+			color: #fff;
+			text-decoration: none;
+			font-size: 1.5rem;
+			line-height: 1.5rem;
+			letter-spacing: 0.2rem;
+		}
+	}
 }

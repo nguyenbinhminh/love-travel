@@ -101,12 +101,12 @@ mixin sidebarHeader(caption="", title="", typeUnderline="")
 		span.text-warning Thiếu caption
 
 //- Sidebar Packages
-mixin sidebarPackagesItem(srcImage= "", place= "", href= "", location="", price="", type="")
+mixin sidebarPackagesItem(srcImage= "", place= "", href= "", location="", linkLocation="", price="", type="")
 	li.sidebar-packages-item
 		img(src= srcImage, alt= place).sidebar-packages-image
 		.sidebar-packages-info
 			a(href= href).sidebar-packages-info-title= place
-			a(href= href).sidebar-packages-info-link
+			a(href= linkLocation).sidebar-packages-info-link
 				img(src="./images/icon-location.png", alt="Icon Location").sidebar-packages-info-image
 				span.sidebar-packages-info-location= location
 			case type
@@ -174,9 +174,9 @@ mixin benefitItem(srcImg= "", title="", desc="", link="#")
 			a(href= href).benefit-info-link View more
 
 //- Package Item
--var placeNames={berlin:{name:"Berlin", link:"#"}, hongkong:{name:"Hong Kong", link:"#"}, tuscany:{name:"Tuscany", link:"#"}, phuket:{name:"Phuket", link:"#"}, amsterdam:{name:"Amsterdam", link:"#"}, sanfrancisco:{name:"San Francisco", link:"#"}};
+-var placeNames={berlin:{name:"Berlin", link:"/berlin.html"}, hongkong:{name:"Hong Kong", link:"/hongkong.html"}, tuscany:{name:"Tuscany", link:"tuscany.html"}, phuket:{name:"Phuket", link:"phuket.html"}, amsterdam:{name:"Amsterdam", link:"/amsterdam.html"}, sanfrancisco:{name:"San Francisco", link:"/sanfrancisco.html"}};
 
--var placeLocations={europe:{name:"Europe", link:"#"}, thailandian:{name:"Thailandian", link:"#"}, asia:{name:"Asia", link:"#"}, italy:{name:"Italy", link:"#"}, netherlands:{name:"Netherlands",link:"#"}, us:{name:"United States", link:"#"}};
+-var placeLocations={europe:{name:"Europe", link:"/europe.html"}, thailandian:{name:"Thailandian", link:"/thailandian.html"}, asia:{name:"Asia", link:"/asia.html"}, italy:{name:"Italy", link:"/italy.html"}, netherlands:{name:"Netherlands",link:"/netherlands.html"}, us:{name:"United States", link:"/us.html"}};
 
 -var placeImgs={"berlin":"./images/package-berlin.jpg", "amsterdam":"./images/package-amsterdam.jpg", "hongkong":"./images/package-hongkong.jpg", "phuket":"./images/package-phuket.jpg", "sanfrancisco":"./images/package-sanfrancisco.jpg", "tuscany":"./images/package-tuscany.jpg"};
 
@@ -227,3 +227,17 @@ mixin footerSocial(type="")
 		when type = "vimeo"
 			a(href= footerSocials.vimeo.link).footer-content-social--link
 				img(src= footerSocials.vimeo.img, alt= footerSocials.vimeo.name).footer-content-social--icon
+
+//- Header Packages Page
+mixin headerPackagePage(packageName="", packageLocation="", packageTime="", packageBg="", packageBgDirect="center")
+	header(class="header__package", style= `background: -webkit-gradient(linear, left top, left bottom, from(rgba(101, 100, 96, 0.3))), url(${packageBg}) ${packageBgDirect} center / cover no-repeat`)
+		include header-navbar
+		.header__package-content.grid.wide
+			h1.header__package-content-title= packageName
+			.header__package-content-info
+				.header__package-info-item
+					img(src="./images/icon-location.png", alt="icon location").header__package-info-icon
+					a(href="#").header__package-info-text= packageLocation
+				.header__package-info-item
+					img(src="./images/icon-time-white.png", alt="icon timer").header__package-info-icon
+					span.header__package-info-text= packageTime

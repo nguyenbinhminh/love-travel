@@ -1,11 +1,13 @@
 extends layout/page
 block css
+	link(rel="stylesheet", href="styles/hongkong.css")
 
 block vars
 	-title = 'Hong Kong - Love Travel'
 	-bodyClass = 'home-page'
 
 block header
-	include blocks/header-navbar
+	include blocks/hongkong-header
 
 block container
+	include blocks/hongkong-body
