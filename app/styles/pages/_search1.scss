@@ -60,6 +60,9 @@
 		margin-top: 1rem;
 		&-item {
 			margin-bottom: 3rem;
+			@media (min-width: 1024px) and (max-width: 1239px) {
+				width: 100% !important;
+			}
 		}
 		&-pagination {
 			@include flexbox(center, center);
@@ -144,15 +147,30 @@
 			background-color: #555;
 			color: #fff;
 		}
+		&-type {
+			@include flexbox(center, space-between);
+			@media (min-width: 1024px) and (max-width: 1239px) {
+				flex-direction: row;
+				align-items: flex-start;
+				margin-left: unset !important;
+				margin-right: unset !important;
+			}
+		}
 		&-list {
 			background-color: rgba(255, 255, 255, 0.1);
+			@include flexbox(flex-start, flex-start, row, nowrap);
+			@media (min-width: 1024px) and (max-width: 1239px) {
+				display: flex !important;
+			}
 		}
 		&-item {
+			width: 100%;
 			color: #fff;
-			@include flexbox(center);
+			@include flexbox(center, flex-end);
 		}
 		&-list {
 			@include flexbox(center, space-between);
+			width: 50%;
 		}
 		&-link {
 			padding: 0.5rem 2rem;
@@ -163,6 +181,9 @@
 			color: #fff;
 			&-type {
 				padding-right: 0.5rem;
+				@media (min-width: 1024px) and (max-width: 1239px) {
+					padding-left: 0;
+				}
 			}
 		}
 		&-more {
@@ -171,6 +192,10 @@
 			font-size: 1.4rem;
 			line-height: 1.4rem;
 			position: relative;
+			@media (min-width: 1024px) and (max-width: 1239px) {
+				padding-left: 0.4rem;
+				padding-right: 0.4rem;
+			}
 			&:hover .post-info-more-list {
 				display: block;
 			}
