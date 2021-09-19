@@ -210,9 +210,12 @@ section.package-page.grid.wide
 							p.package-sidebar-testimonials-desc I love discover the world!
 					.package-sidebar-single
 						+singlePackage("./images/hongkong-ocenia.jpg","./images/destination-europe-icon-arch.png", "oceania", 0, {"":""})
-		.package-page-related.col.l-12
-			+blockTitle("related", "", "packages", "red")
-			.package-list.row.lg-gutter
-				+packageItem(placeNames.berlin.name, placeNames.berlin.link, placeImgs.berlin, placeIcons.arch, "orange", placeLocations.europe.name, placeLocations.europe.link, "Cultural", "Relax", 700, 0, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque.", "yellow")
-				+packageItem(placeNames.sanfrancisco.name, placeNames.sanfrancisco.link, placeImgs.sanfrancisco, placeIcons.goldengate, "violet", placeLocations.us.name, placeLocations.us.link, "Sport", "Relax", 400, 0, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque.", "violet")
-				+packageItem(placeNames.amsterdam.name, placeNames.amsterdam.link, placeImgs.amsterdam, placeIcons.eye, "orange-rev", placeLocations.asia.name, placeLocations.asia.link, "History", "Sport", 1500, 0, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque.", "orange")
+section.related-package
+	.related-package-container.grid.wide
+		.related-package-wrapper.row.lg-gutter
+			.package-page-related.col.l-12
+				+blockTitle("related", "", "packages", "red")
+				.package-list.row.lg-gutter
+					+packageItem(placeNames.berlin.name, placeNames.berlin.link, placeImgs.berlin, placeIcons.arch, "orange", placeLocations.europe.name, placeLocations.europe.link, "Cultural", "Relax", 700, 0, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque.", "yellow")
+					+packageItem(placeNames.sanfrancisco.name, placeNames.sanfrancisco.link, placeImgs.sanfrancisco, placeIcons.goldengate, "violet", placeLocations.us.name, placeLocations.us.link, "Sport", "Relax", 400, 0, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque.", "violet")
+					+packageItem(placeNames.amsterdam.name, placeNames.amsterdam.link, placeImgs.amsterdam, placeIcons.eye, "orange-rev", placeLocations.asia.name, placeLocations.asia.link, "History", "Sport", 1500, 0, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque.", "orange")
