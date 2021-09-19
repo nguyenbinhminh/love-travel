@@ -118,6 +118,11 @@ p {
   padding: 1.5rem 3.5rem;
   border-radius: 3.8rem; }
 
+.btn-m {
+  letter-spacing: 0.2rem;
+  padding: 1rem 2rem;
+  border-radius: 3rem; }
+
 .lg-orange {
   background: -webkit-gradient(linear, left top, right top, from(#ffd205), to(#ff9b05));
   background: linear-gradient(to right, #ffd205 0%, #ff9b05 100%); }
@@ -2272,6 +2277,8 @@ p {
         margin-right: 2rem; }
     .footer-content-right--wrapper {
       margin-top: 2.5rem; }
+    .footer-content-right--item {
+      margin-bottom: 3rem; }
     .footer-content-title {
       text-transform: uppercase;
       color: #555555;

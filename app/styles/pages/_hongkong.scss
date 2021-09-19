@@ -1,0 +1,437 @@
+.package {
+	&-content {
+		&-header {
+			margin-top: 3rem;
+			padding-top: 4rem;
+			padding-bottom: 2rem;
+			&-icon {
+				width: 4rem;
+				height: 4rem;
+				object-fit: cover;
+				margin-right: 1.5rem;
+			}
+			&-item {
+				@include flexbox(stretch);
+			}
+			&-info {
+				@include flexbox(flex-start, space-between, column);
+			}
+		}
+		&-info {
+			&-title {
+				text-transform: uppercase;
+				color: $title-color;
+				font-size: 1.4rem;
+				line-height: 1.4rem;
+				font-weight: bold;
+				margin-bottom: 0.5rem;
+			}
+			&-wrapper {
+				@include flexbox(center, space-between);
+			}
+			&-desc {
+				text-transform: capitalize;
+				color: $text-color;
+				font-size: 1.4rem;
+				line-height: 2.7rem;
+				letter-spacing: 0.1rem;
+			}
+			&-more {
+				display: inline-block;
+				font-size: 1rem;
+				line-height: 1.4rem;
+				border-radius: 3rem;
+				margin-left: 1rem;
+				padding: 0.2rem 0.8rem;
+				color: #fff;
+				position: relative;
+				&:hover .package-content-info-list {
+					display: block;
+				}
+			}
+			&-list {
+				display: none;
+				position: absolute;
+				top: 100%;
+				left: 0;
+				background-color: $title-color;
+				margin-top: 1rem;
+				&::before {
+					content: "";
+					position: absolute;
+					top: -1.5rem;
+					left: 0.5rem;
+					border-width: 0.8rem;
+					border-style: solid;
+					border-color: transparent transparent $title-color transparent;
+				}
+				&::after {
+					content: "";
+					position: absolute;
+					top: -1.5rem;
+					left: 0;
+					width: 7.5rem;
+					height: 2rem;
+				}
+			}
+			&-link {
+				display: block;
+				color: #fff;
+				text-decoration: none;
+				font-size: 1.1rem;
+				line-height: 1.6rem;
+				padding: 1rem 1.2rem 0.5rem 1.2rem;
+			}
+		}
+		&-image {
+			width: 100%;
+			object-fit: cover;
+		}
+		&-nav {
+			&-list {
+				@include flexbox;
+				margin-top: 4rem;
+				@media (min-width: 320px) and (max-width: 550px) {
+					flex-direction: column;
+				}
+			}
+			&-item {
+				margin-right: 2rem;
+				&:hover .package-content-nav-link {
+					background-color: $red-color;
+					color: #fff;
+				}
+			}
+			&-link {
+				display: block;
+				text-decoration: none;
+				padding: 0.5rem 2rem;
+				font-size: 1.4rem;
+				line-height: 2.7rem;
+				border-radius: 3rem;
+				text-transform: uppercase;
+				color: $text-color;
+				transition: all 0.4s ease;
+				&--active {
+					background-color: $red-color;
+					color: #fff;
+				}
+			}
+		}
+		&-title {
+			margin-top: 4rem;
+			margin-bottom: 3rem;
+			color: $title-color;
+			font-size: 2.5rem;
+			line-height: 2.5rem;
+			font-weight: bold;
+			letter-spacing: 0;
+		}
+		&-desc {
+			color: $text-color;
+			font-size: 1.4rem;
+			line-height: 2.7rem;
+			letter-spacing: 0.1rem;
+			margin-bottom: 3rem;
+		}
+		&-intro {
+			&-item {
+				padding: 2rem 0;
+				border-top: 1px solid $border-color;
+				&:last-child {
+					border-bottom: 1px solid $border-color;
+				}
+			}
+			&-left {
+				font-size: 1.6rem;
+				line-height: 2.7rem;
+				color: $title-color;
+				letter-spacing: 0.1rem;
+			}
+			&-text {
+				@include flexbox(center, flex-start);
+				color: $text-color;
+				font-size: 1.4rem;
+				line-height: 2.7rem;
+				letter-spacing: 0.1rem;
+				& + .package-content-intro-text {
+					margin-top: 1rem;
+				}
+			}
+			&-icon {
+				width: 1.2rem;
+				height: 1.2rem;
+				margin-right: 2rem;
+			}
+		}
+		&-map {
+			border-bottom: 1px solid $border-color;
+			padding-bottom: 4rem;
+		}
+		&-gallery {
+			border-bottom: 1px solid $border-color;
+			padding-bottom: 4rem;
+			&-list {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 1.5rem;
+				grid-template-areas:
+					"h1 h2 h3"
+					"h4 h4 h3";
+			}
+			&-item {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				&:first-child {
+					grid-area: h1;
+				}
+				&:nth-child(2) {
+					grid-area: h2;
+				}
+				&:nth-child(3) {
+					grid-area: h3;
+				}
+				&:last-child {
+					grid-area: h4;
+				}
+			}
+		}
+		&-program {
+			&-item {
+				padding: 1rem 0;
+			}
+			&-btn {
+				@include flexbox(center);
+				position: relative;
+				&-close,
+				&-open {
+					display: block;
+					width: 2.5rem;
+					height: 2.5rem;
+					margin-right: 2rem;
+					cursor: pointer;
+					@include flexbox(center, center);
+				}
+				&-icon {
+					display: block;
+					width: 1.2rem;
+					height: 1.2rem;
+				}
+			}
+			&-title {
+				text-transform: uppercase;
+				color: $title-color;
+				font-weight: bold;
+				font-size: 1.7rem;
+				line-height: 1.7rem;
+				letter-spacing: 0.1rem;
+				position: absolute;
+				top: 50%;
+				left: 4.5rem;
+				transform: translateY(-50%);
+				span {
+					text-transform: none;
+					font-weight: normal;
+					color: $text-color;
+				}
+			}
+			&-detail {
+				padding: 2rem 2rem 2rem 4.5rem;
+				color: $text-color;
+				font-size: 1.4rem;
+				line-height: 2.7rem;
+				letter-spacing: 0.1rem;
+				display: none;
+			}
+		}
+	}
+	&-sidebar {
+		&-subscribe {
+			&-title {
+				margin-top: 3rem;
+				font-size: 3.2rem;
+				line-height: 3.2rem;
+				font-weight: normal;
+				padding: 4rem;
+				text-align: center;
+				color: #fff;
+				position: relative;
+			}
+		}
+		&-form {
+			padding: 3rem;
+			border: 1px solid $border-color;
+			button {
+				width: 100%;
+			}
+		}
+		&-btn {
+			padding: 0 2rem;
+		}
+		&-bg {
+			width: 100%;
+			margin-top: 4rem;
+			img {
+				width: 100%;
+				object-fit: cover;
+			}
+		}
+		&-best {
+			margin-top: 4rem;
+		}
+		&-title {
+			font-weight: bold;
+			color: $title-color;
+			font-size: 2rem;
+			line-height: 2rem;
+			text-transform: capitalize;
+			margin-bottom: 2rem;
+		}
+		&-single {
+			margin-top: 4rem;
+			height: 50rem;
+			.single-package-image {
+				height: 100%;
+				padding-bottom: unset;
+			}
+		}
+		&-tags {
+			margin-top: 4rem;
+			&-cloud {
+				a {
+					text-decoration: none;
+					display: inline-block;
+					border: 1px solid $border-color;
+					font-size: 1.2rem;
+					line-height: 1.2rem;
+					padding: 0.8rem 2rem;
+					border-radius: 3rem;
+					margin: 0.5rem;
+					color: $text-color;
+					text-transform: capitalize;
+				}
+			}
+		}
+		&-time {
+			margin-top: 3rem;
+			&-item {
+				@include flexbox(center, space-between);
+			}
+			&-title {
+				text-transform: uppercase;
+				color: $text-color;
+				font-size: 1.4rem;
+				line-height: 2.7rem;
+				letter-spacing: 0.1rem;
+			}
+			&-text {
+				display: inline-block;
+				color: #fff;
+				padding: 0.4rem 2rem;
+				border-radius: 3rem;
+				font-size: 1.1rem;
+				line-height: 1.1rem;
+			}
+		}
+		&-testimonials {
+			margin-top: 4rem;
+			&-content {
+				padding: 2rem;
+				color: #fff;
+				font-size: 1.4rem;
+				line-height: 2.7rem;
+				letter-spacing: 0.1rem;
+				position: relative;
+				margin-bottom: 2rem;
+				&::after {
+					content: "";
+					border-width: 1.5rem;
+					border-style: solid;
+					border-color: $primary-color transparent transparent transparent;
+					position: absolute;
+					bottom: -3rem;
+				}
+			}
+			&-author {
+				@include flexbox(stretch);
+				margin-top: 4rem;
+			}
+			&-image {
+				margin-right: 2rem;
+				img {
+					width: 7rem;
+					height: 7rem;
+					border-radius: 50%;
+				}
+			}
+			&-info {
+				@include flexbox(flex-start, space-between, column);
+				padding: 1rem 0;
+			}
+			&-name {
+				text-transform: uppercase;
+				color: $title-color;
+				font-size: 1.7rem;
+				line-height: 1.7rem;
+				letter-spacing: 0.1rem;
+			}
+			&-desc {
+				color: $text-color;
+				font-size: 1.4rem;
+				line-height: 1.7rem;
+				letter-spacing: 0.1rem;
+			}
+		}
+	}
+	&-input {
+		border-radius: 3rem;
+		border: 1px solid $border-color;
+		color: $text-input-color;
+		background-color: $bg-input-color;
+		font-size: 1.5rem;
+		padding: 1rem 2rem;
+		width: 100%;
+		margin-bottom: 3rem;
+		&::placeholder {
+			color: $text-input-color;
+		}
+		&::-webkit-input-placeholder {
+			color: $text-input-color;
+		}
+		&::-moz-placeholder {
+			color: $text-input-color;
+		}
+		&:-ms-input-placeholder {
+			color: $text-input-color;
+		}
+	}
+	&-price {
+		&-origin {
+			text-decoration: line-through;
+			font-size: 2rem;
+			line-height: 2rem;
+			opacity: 0.6;
+		}
+		&-currency {
+			font-size: 2rem;
+			line-height: 2rem;
+		}
+		&-sale {
+			&-label {
+				display: inline-block;
+				background-color: $title-color;
+				color: #fff;
+				font-size: 1.4rem;
+				line-height: 1.4rem;
+				letter-spacing: 0.2rem;
+				padding: 0.5rem 2rem;
+				border-radius: 3rem;
+				position: absolute;
+				top: -1.2rem;
+				right: 2rem;
+				text-decoration: none;
+			}
+		}
+	}
+}
