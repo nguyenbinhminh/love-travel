@@ -1,0 +1,15 @@
+extends layout/page
+block scripts
+	include blocks/packages-script
+block css
+	link(rel="stylesheet", href="styles/netherlands.css")
+
+block vars
+	-title = 'Netherlands - Love Travel'
+	-bodyClass = 'home-page'
+
+block header
+	include blocks/netherlands-header
+
+block container
+	include blocks/netherlands-body

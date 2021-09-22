@@ -3,48 +3,20 @@ section.package-page.grid.wide
 		.package-page-content.col.l-8.m-12.c-12
 			.package-content-header
 				ul.package-content-header-list.row.lg-gutter
-					li.package-content-header-item.col.l-4
-						img(src="./images/icon-typologies-greydark.png", alt="icon").package-content-header-icon
-						.package-content-header-info
-							h3.package-content-info-title Typologies
-							.package-content-info-wrapper
-								h4.package-content-info-desc History
-								h5.package-content-info-more.bg-red + 2
-									ul.package-content-info-list
-										li.package-content-info-item
-											a(href="#").package-content-info-link Cultural
-										li.package-content-info-item
-											a(href="#").package-content-info-link Sport
-					li.package-content-header-item.col.l-4
-						img(src="./images/icon-battery-greydark.png", alt="icon").package-content-header-icon
-						.package-content-header-info
-							h3.package-content-info-title Difficulty
-							.package-content-info-wrapper
-								h4.package-content-info-desc Low
-					li.package-content-header-item.col.l-4
-						img(src="./images/icon-minage-greydark.png", alt="icon").package-content-header-icon
-						.package-content-header-info
-							h3.package-content-info-title Min. Age
-							.package-content-info-wrapper
-								h4.package-content-info-desc 18 years
+					+packageContentHeaderItem("./images/icon-typologies-greydark.png", "Typologies", "History", 2, {"Cultural":"#", "Sport":"#"})
+					+packageContentHeaderItem("./images/icon-battery-greydark.png", "Difficulty", "Low", 0)
+					+packageContentHeaderItem("./images/icon-minage-greydark.png", "Min. Age", "18 years", 0)
 		.package-page-sidebar.col.l-4.m-12.c-12
-			.package-sidebar-subscribe
-				h2.package-sidebar-subscribe-title.bg-red #[span.package-price-origin 1000] 500 #[span.package-price-currency $]
-					a(href="/hongkong.html").package-price-sale-label Sale
+			+packageSidebarSubscribe("red", 1000, 500, "/hongkong.html")
 		.package-page-content.col.l-8.m-12.c-12
 			.package-content-container
-				.package-content-bg
-					img(src="./images/package-hongkong.jpg", alt="Hong Kong", class="package-content-image")
+				+packageContentBackground("./images/package-hongkong.jpg", "Hong Kong")
 				.package-content-nav
 					ul.package-content-nav-list
-						li.package-content-nav-item
-							a(href="#package-content-intro", class="package-content-nav-link package-content-nav-link--active") Description
-						li.package-content-nav-item
-							a(href="#package-content-map", class="package-content-nav-link") Map
-						li.package-content-nav-item
-							a(href="#package-content-gallery", class="package-content-nav-link") Photos
-						li.package-content-nav-item
-							a(href="#package-content-program", class="package-content-nav-link") Program
+						+packageContentNavItem("package-content-intro","Description", true)
+						+packageContentNavItem("package-content-map","Map", false)
+						+packageContentNavItem("package-content-gallery","Photos", false)
+						+packageContentNavItem("package-content-program","Program", false)
 				.package-content-intro#package-content-intro
 					h2.package-content-title Amazing Experience
 					p.package-content-desc Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut venenatis lorem. Nunc sodales interdum rhoncus. <u>Nulla a leo finibus</u>, ullamcorper lorem vel, scelerisque massa. Vivamus leo dui, interdum non fermentum eget, laoreet ac lorem. Aliquam a ultricies nisl. Nulla consequat lobortis urna sed cursus.
@@ -90,10 +62,10 @@ section.package-page.grid.wide
 				.package-content-gallery#package-content-gallery
 					h2.package-content-title Gallery
 					.package-content-gallery-list
-						img(src="./images/hongkong-gallery-1.jpg", alt="").package-content-gallery-item
-						img(src="./images/hongkong-gallery-2.jpg", alt="").package-content-gallery-item
-						img(src="./images/hongkong-gallery-3.jpg", alt="").package-content-gallery-item
-						img(src="./images/hongkong-gallery-4.jpg", alt="").package-content-gallery-item
+						img(src="./images/hongkong-gallery-1.jpg", alt="Gallery image").package-content-gallery-item
+						img(src="./images/hongkong-gallery-2.jpg", alt="Gallery image").package-content-gallery-item
+						img(src="./images/hongkong-gallery-3.jpg", alt="Gallery image").package-content-gallery-item
+						img(src="./images/hongkong-gallery-4.jpg", alt="Gallery image").package-content-gallery-item
 				.package-content-program#package-content-program
 					h2.package-content-title Day by Day
 					p.package-content-desc Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut venenatis lorem. Nunc sodales interdum rhoncus. <u>Nulla a leo finibus</u>, ullamcorper lorem vel, scelerisque massa. Vivamus leo dui, interdum non fermentum eget, laoreet ac lorem. Aliquam a ultricies nisl. Nulla consequat lobortis urna sed cursus. <u>ipsum dolor sit amet</u>, consectetur adipiscing elit consectef lorem vel, scelerisque massa. Vivamus leo dui, interdum non.

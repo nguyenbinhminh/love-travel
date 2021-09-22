@@ -1,11 +1,15 @@
 extends layout/page
+block scripts
+	include blocks/packages-script
 block css
+	link(rel="stylesheet", href="styles/europe.css")
 
 block vars
 	-title = 'Europe - Love Travel'
 	-bodyClass = 'home-page'
 
 block header
-	include blocks/header-navbar
+	include blocks/europe-header
 
 block container
+	include blocks/europe-body

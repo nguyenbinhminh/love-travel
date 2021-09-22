@@ -1,5 +1,8 @@
 extends layout/page
+block scripts
+	include blocks/packages-script
 block css
+	link(rel="stylesheet", href="styles/berlin.css")
 
 block vars
 	-title = 'Berlin - Love Travel'
@@ -9,3 +12,4 @@ block header
 	include blocks/berlin-header
 
 block container
+	include blocks/berlin-body

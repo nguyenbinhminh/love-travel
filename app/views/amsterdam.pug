@@ -1,5 +1,8 @@
 extends layout/page
+block scripts
+	include blocks/packages-script
 block css
+	link(rel="stylesheet", href="styles/amsterdam.css")
 
 block vars
 	-title = 'Amsterdam - Love Travel'
@@ -9,3 +12,4 @@ block header
 	include blocks/amsterdam-header
 
 block container
+	include blocks/amsterdam-body

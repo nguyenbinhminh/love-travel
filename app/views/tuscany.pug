@@ -1,5 +1,8 @@
 extends layout/page
+block scripts
+	include blocks/packages-script
 block css
+	link(rel="stylesheet", href="styles/tuscany.css")
 
 block vars
 	-title = 'Tuscany - Love Travel'
@@ -9,3 +12,4 @@ block header
 	include blocks/tuscany-header
 
 block container
+	include blocks/tuscany-body

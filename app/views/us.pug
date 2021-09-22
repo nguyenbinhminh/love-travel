@@ -1,0 +1,15 @@
+extends layout/page
+block scripts
+	include blocks/packages-script
+block css
+	link(rel="stylesheet", href="styles/us.css")
+
+block vars
+	-title = 'United States - Love Travel'
+	-bodyClass = 'home-page'
+
+block header
+	include blocks/us-header
+
+block container
+	include blocks/us-body

@@ -1,0 +1,194 @@
+section.package-page.grid.wide
+	.package-page-wrapper.row.lg-gutter
+		.package-page-content.col.l-8.m-12.c-12
+			.package-content-header
+				ul.package-content-header-list.row.lg-gutter
+					+packageContentHeaderItem("./images/icon-typologies-greydark.png", "Typologies", "Cultural", 2, {"Relax":"#", "Sport":"#"})
+					+packageContentHeaderItem("./images/icon-battery-greydark.png", "Difficulty", "Medium", 0)
+					+packageContentHeaderItem("./images/icon-minage-greydark.png", "Min. Age", "3 years", 0)
+		.package-page-sidebar.col.l-4.m-12.c-12
+			+packageSidebarSubscribe("primary", 1200, 0)
+		.package-page-content.col.l-8.m-12.c-12
+			.package-content-container
+				.package-content-map#package-content-map
+					iframe(src="https://www.google.com/maps/embed?pb=!4v1632292906599!6m8!1m7!1sCAoSLEFGMVFpcE1PY2ZaMHNQYW53cUJWZ25JYTV6bG1vRUhQMlJQOHk1eFRkd2FJ!2m2!1d-23.4428043!2d151.9066925!3f68.2!4f3.3599999999999994!5f0.4000000000000002" width="100%" height="480" style="border:0;" allowfullscreen="" loading="lazy")
+				.package-content-nav
+					ul.package-content-nav-list
+						+packageContentNavItem("package-content-intro","Description", true)
+						+packageContentNavItem("package-content-map","Map", false)
+						+packageContentNavItem("package-content-gallery","Photos", false)
+						+packageContentNavItem("package-content-program","Program", false)
+				.package-content-intro#package-content-intro
+					h2.package-content-title Amazing Experience
+					p.package-content-desc Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut venenatis lorem. Nunc sodales interdum rhoncus. <u>Nulla a leo finibus</u>, ullamcorper lorem vel, scelerisque massa. Vivamus leo dui, interdum non fermentum eget, laoreet ac lorem. Aliquam a ultricies nisl. Nulla consequat lobortis urna sed cursus.
+					p.package-content-desc Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut venenatis lorem. Nunc sodales interdum rhoncus. Nulla a leo finibus, ullamcorper lorem vel, scelerisque massa. Vivamus leo dui, interdum non fermentum eget, <i>laoreet ac lorem</i>. Aliquam a ultricies nisl. Nulla consequat lobortis urna sed cursus.
+					.package-content-intro-detail
+						ul.package-content-intro-list
+							li.package-content-intro-item.row
+								h3.package-content-intro-left.col.l-6 Entrance to the museums
+								.package-content-intro-right.col.l-6
+									p.package-content-intro-text 50% discount on all admissions
+							li.package-content-intro-item.row
+								h3.package-content-intro-left.col.l-6 Travel with children and pets
+								.package-content-intro-right.col.l-6
+									p.package-content-intro-text Possibility to rent the stroller
+							li.package-content-intro-item.row
+								h3.package-content-intro-left.col.l-6 Travel by bus, car and minivan
+								.package-content-intro-right.col.l-6
+									p.package-content-intro-text Air conditioning guaranteed
+							li.package-content-intro-item.row
+								h3.package-content-intro-left.col.l-6 Package specifications
+								.package-content-intro-right.col.l-6
+									p.package-content-intro-text
+										img(src="./images/check-green.png", alt="icon check", class="package-content-intro-icon")
+										span Air conditioning guaranteed
+									p.package-content-intro-text
+										img(src="./images/check-green.png", alt="icon check", class="package-content-intro-icon")
+										span Breakfast and dinner included
+									p.package-content-intro-text
+										img(src="./images/check-green.png", alt="icon check", class="package-content-intro-icon")
+										span  Health care included
+							li.package-content-intro-item.row
+								h3.package-content-intro-left.col.l-6 Services NOT included
+								.package-content-intro-right.col.l-6
+									p.package-content-intro-text
+										img(src="./images/cancel-red.png", alt="icon check", class="package-content-intro-icon")
+										span Lunch not included in the package
+									p.package-content-intro-text
+										img(src="./images/cancel-red.png", alt="icon check", class="package-content-intro-icon")
+										span Baggage protection insurance
+				.package-content-map#package-content-map
+					h2.package-content-title Tour map
+					iframe(src="https://www.google.com/maps/d/embed?mid=1IkWHR1kZ8bBI1BmhTy-lycGVSTpggI0_" width="100%" height="480")
+				.package-content-gallery#package-content-gallery
+					h2.package-content-title Gallery
+					.package-content-gallery-list
+						img(src="./images/hongkong-gallery-1.jpg", alt="Gallery image").package-content-gallery-item
+						img(src="./images/hongkong-gallery-2.jpg", alt="Gallery image").package-content-gallery-item
+						img(src="./images/hongkong-gallery-3.jpg", alt="Gallery image").package-content-gallery-item
+						img(src="./images/hongkong-gallery-4.jpg", alt="Gallery image").package-content-gallery-item
+				.package-content-program#package-content-program
+					h2.package-content-title Day by Day
+					p.package-content-desc Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut venenatis lorem. Nunc sodales interdum rhoncus. <u>Nulla a leo finibus</u>, ullamcorper lorem vel, scelerisque massa. Vivamus leo dui, interdum non fermentum eget, laoreet ac lorem. Aliquam a ultricies nisl. Nulla consequat lobortis urna sed cursus. <u>ipsum dolor sit amet</u>, consectetur adipiscing elit consectef lorem vel, scelerisque massa. Vivamus leo dui, interdum non.
+					ul.package-content-program-list
+						li.package-content-program-item
+							.package-content-program-btn
+								span.package-content-program-btn-close.bg-red.package-program-day-1-close
+									img(src="../images/icon-add-white.png", alt="icon add", class="package-content-program-btn-icon")
+								span(style="display: none;").package-content-program-btn-open.bg-red.package-program-day-1-open
+									img(src="../images/icon-less-white.png", alt="icon less", class="package-content-program-btn-icon")
+								h3.package-content-program-title Day 1 #[span - Departure at the airport and arrival at the hotel]
+							.package-content-program-detail.package-program-detail-day-1
+								p Lorem commodo lectus at sollicitudin elementum. Sed dolor turpis, condimentum sit amet maximus sit amet, rhoncus non turpis.
+						li.package-content-program-item
+							.package-content-program-btn
+								span.package-content-program-btn-close.bg-red.package-program-day-2-close
+									img(src="../images/icon-add-white.png", alt="icon add", class="package-content-program-btn-icon")
+								span(style="display: none;").package-content-program-btn-open.bg-red.package-program-day-2-open
+									img(src="../images/icon-less-white.png", alt="icon less", class="package-content-program-btn-icon")
+								h3.package-content-program-title Day 2 #[span - Visit the main museums and lunch included]
+							.package-content-program-detail.package-program-detail-day-2
+								p Lorem commodo lectus at sollicitudin elementum. Sed dolor turpis, condimentum sit amet maximus sit amet, rhoncus non turpis.
+						li.package-content-program-item
+							.package-content-program-btn
+								span.package-content-program-btn-close.bg-red.package-program-day-3-close
+									img(src="../images/icon-add-white.png", alt="icon add", class="package-content-program-btn-icon")
+								span(style="display: none;").package-content-program-btn-open.bg-red.package-program-day-3-open
+									img(src="../images/icon-less-white.png", alt="icon less", class="package-content-program-btn-icon")
+								h3.package-content-program-title Day 3 #[span - Excursion in the natural oasis and picnic]
+							.package-content-program-detail.package-program-detail-day-3
+								p Lorem commodo lectus at sollicitudin elementum. Sed dolor turpis, condimentum sit amet maximus sit amet, rhoncus non turpis.
+						li.package-content-program-item
+							.package-content-program-btn
+								span.package-content-program-btn-close.bg-red.package-program-day-4-close
+									img(src="../images/icon-add-white.png", alt="icon add", class="package-content-program-btn-icon")
+								span(style="display: none;").package-content-program-btn-open.bg-red.package-program-day-4-open
+									img(src="../images/icon-less-white.png", alt="icon less", class="package-content-program-btn-icon")
+								h3.package-content-program-title Day 4 #[span - Transfer to the airport and return to the agency]
+							.package-content-program-detail.package-program-detail-day-4
+								p Lorem commodo lectus at sollicitudin elementum. Sed dolor turpis, condimentum sit amet maximus sit amet, rhoncus non turpis.
+						li.package-content-program-item
+							.package-content-program-btn
+								span.package-content-program-btn-close.bg-red.package-program-day-5-close
+									img(src="../images/icon-add-white.png", alt="icon add", class="package-content-program-btn-icon")
+								span(style="display: none;").package-content-program-btn-open.bg-red.package-program-day-5-open
+									img(src="../images/icon-less-white.png", alt="icon less", class="package-content-program-btn-icon")
+								h3.package-content-program-title Day 5 #[span - Lorem ipsum dolor sit amet, consectetur adipiscing]
+							.package-content-program-detail.package-program-detail-day-5
+								p Lorem commodo lectus at sollicitudin elementum. Sed dolor turpis, condimentum sit amet maximus sit amet, rhoncus non turpis.
+		.package-page-sidebar.col.l-4.m-12.c-12
+			.package-sidebar-container
+				form(action="#").package-sidebar-form
+					.package-sidebar-form-item.row.no-gutters
+						.package-sidebar-name.col.l-6.m-12.c-12
+							input(type="text", placeholder="Name", class="package-input")
+						.package-sidebar-surname.col.l-6.m-12.c-12
+							input(type="text", placeholder="Surname", class="package-input")
+					.package-sidebar-form-item.row.no-gutters
+						.package-sidebar-email.col.l-6.m-12.c-12
+							input(type="email", placeholder="Email", class="package-input")
+						.package-sidebar-guest.col.l-6.m-12.c-12
+							input(type="text", placeholder="Guest", class="package-input")
+					.package-sidebar-form-item.row.no-gutters
+						.package-sidebar-phone.col.l-12.m-12.c-12
+							input(type="phone", placeholder="Phone", class="package-input")
+					.package-sidebar-form-item.row.no-gutters
+						.package-sidebar-mess.col.l-12.m-12.c-12
+							textarea(name="", cols="10", rows="5", placeholder="Message", class="package-input")
+					.package-sidebar-form-item.row.no-gutters
+						.package-sidebar-btn.l-12.m-12.c-12
+							button(type="submit", class="btn btn-lg bg-red color-white") Send now
+				.package-sidebar-bg
+					img(src="./images/holiday-bg.jpg", alt="bg")
+				.package-sidebar-best
+					h2.package-sidebar-title Best packages
+					ul.sidebar-packages-list
+						+sidebarPackagesItem("./images/sidebar-berlin.jpg", "Berlin", "/berlin.html", "Europe", "/europe.html", "From 700 $")
+						+sidebarPackagesItem("./images/sidebar-hong_kong.jpg", "Hong Kong", "/hongkong.html", "Asia", "/asia.html", "From 500 $", "red")
+						+sidebarPackagesItem("./images/sidebar-san_francisco.jpg", "San Francisco", "/sanfrancisco.html", "United States", "/us.html", "From 400 $", "violet")
+				.package-sidebar-search
+					h2.package-sidebar-title Search
+					input(type="text").package-input
+					a(href="#").btn.btn-m.bg-primary.color-white Search
+				.package-sidebar-single
+					+singlePackage("./images/destination-europe.jpg","./images/destination-europe-icon-arch.png", "europe", 3, {"Berlin": "/berlin.html", "Amsterdam": "/amsterdam.html", "Tuscany" :"/tuscany.html"})
+				.package-sidebar-tags
+					h2.package-sidebar-title Tags
+					.package-sidebar-tags-cloud
+						a(href="#") Adventure
+						a(href="#") Agency
+						a(href="#") Booking
+						a(href="#") Family
+						a(href="#") Holiday
+						a(href="#") Packages
+						a(href="#") Resort
+						a(href="#") Tours
+						a(href="#") Travel
+						a(href="#") Wellness
+				.package-sidebar-time
+					.package-sidebar-time-item
+						h2.package-sidebar-time-title Agency opening at
+						span.package-sidebar-time-text.bg-yellow 9 AM
+					.package-sidebar-time-item
+						h2.package-sidebar-time-title Agency will close at
+						span.package-sidebar-time-text.bg-yellow 19 PM
+				.package-sidebar-testimonials
+					.package-sidebar-testimonials-content.bg-primary
+						p.package-sidebar-testimonials-text Ctus at sollicitudin elementum. Sed dolor turpis, condimentum sit amet maximus.
+					.package-sidebar-testimonials-author
+						.package-sidebar-testimonials-image
+							img(src="./images/hongkong-testimonial-1.jpg", alt="Author avatar")
+						.package-sidebar-testimonials-info
+							h2.package-sidebar-testimonials-name Jane Goleman
+							p.package-sidebar-testimonials-desc I love discover the world!
+					.package-sidebar-single
+						+singlePackage("./images/hongkong-ocenia.jpg","./images/destination-europe-icon-arch.png", "oceania", 0, {"":""})
+section.related-package
+	.related-package-container.grid.wide
+		.related-package-wrapper.row.lg-gutter
+			.package-page-related.col.l-12
+				+blockTitle("related", "", "packages", "blue")
+				.package-list.row.lg-gutter
+					+packageItem(placeNames.berlin.name, placeNames.berlin.link, placeImgs.berlin, placeIcons.arch, "orange", placeLocations.europe.name, placeLocations.europe.link, "Cultural", "Relax", 700, 0, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque.", "yellow")
+					+packageItem(placeNames.hongkong.name, placeNames.hongkong.link, placeImgs.hongkong, placeIcons.torigate, "red", placeLocations.asia.name, placeLocations.asia.link, "History", "Cultural", 1000, 500, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque.", "red")
+					+packageItem(placeNames.sanfrancisco.name, placeNames.sanfrancisco.link, placeImgs.sanfrancisco, placeIcons.goldengate, "violet", placeLocations.us.name, placeLocations.us.link, "Sport", "Relax", 400, 0, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque.", "violet")

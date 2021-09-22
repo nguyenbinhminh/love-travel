@@ -1,0 +1,15 @@
+extends layout/page
+block scripts
+	include blocks/packages-script
+block css
+	link(rel="stylesheet", href="styles/italy.css")
+
+block vars
+	-title = 'Italy - Love Travel'
+	-bodyClass = 'home-page'
+
+block header
+	include blocks/italy-header
+
+block container
+	include blocks/italy-body

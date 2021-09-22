@@ -1,0 +1,24 @@
+.package-content-info-more {
+	background-color: $primary-color !important;
+}
+.package-content-header-item {
+	display: flex !important;
+}
+.package-sidebar-form {
+	background-color: $title-color;
+}
+.package-sidebar-form .package-input {
+	background-color: #5d5d5d !important;
+	border: none;
+}
+.package-sidebar-form button {
+	background-color: $primary-color !important;
+}
+.package-content-program-btn-close,
+.package-content-program-btn-open {
+	background-color: $primary-color;
+}
+.package-content-nav-link--active,
+.package-content-nav-item:hover .package-content-nav-link {
+	background-color: $primary-color !important;
+}

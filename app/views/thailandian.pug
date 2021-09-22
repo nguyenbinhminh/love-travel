@@ -1,0 +1,15 @@
+extends layout/page
+block scripts
+	include blocks/packages-script
+block css
+	link(rel="stylesheet", href="styles/thailandia.css")
+
+block vars
+	-title = 'Thailandia - Love Travel'
+	-bodyClass = 'home-page'
+
+block header
+	include blocks/thailandia-header
+
+block container
+	include blocks/thailandia-body

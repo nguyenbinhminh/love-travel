@@ -1,5 +1,8 @@
 extends layout/page
+block scripts
+	include blocks/packages-script
 block css
+	link(rel="stylesheet", href="styles/phuket.css")
 
 block vars
 	-title = 'Phuket - Love Travel'
@@ -9,3 +12,4 @@ block header
 	include blocks/phuket-header
 
 block container
+	include blocks/phuket-body

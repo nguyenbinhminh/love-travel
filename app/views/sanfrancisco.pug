@@ -1,5 +1,8 @@
 extends layout/page
+block scripts
+	include blocks/packages-script
 block css
+	link(rel="stylesheet", href="styles/sanfrancisco.css")
 
 block vars
 	-title = 'San Francisco - Love Travel'
@@ -9,3 +12,4 @@ block header
 	include blocks/sanfrancisco-header
 
 block container
+	include blocks/sanfrancisco-body

@@ -184,7 +184,7 @@ mixin benefitItem(srcImg= "", title="", desc="", link="#")
 
 -var placeTypes={type: {relax: {text:"Relax", link:"#"}, cultural:{text:"Cultural", link:"#"}, sport:{text:"Sport", link:"#"}, history:{text:"History", link:"#"}}};
 
-mixin packageItem(placeName=placeNames.berlin.name, placeLink=placeNames.berlin.link, placeImg=placeImgs.berlin, placeIcon=placeIcons.arch, colorIcon="orange", placeLocation=placeLocations.europe.name, placeLocationLink=placeLocations.europe.link, placeType="Cultural", placeTypePlus="Relax", priceOrigin=1000, priceSale=500, placeDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque.", colorButton="yellow", sale=false)
+mixin packageItem(placeName=placeNames.berlin.name, placeLink=placeNames.berlin.link, placeImg=placeImgs.berlin, placeIcon=placeIcons.arch, colorIcon="orange", placeLocation=placeLocations.europe.name, placeLocationLink=placeLocations.europe.link, placeType="Cultural", placeTypePlus="Relax", priceOrigin=1000, priceSale=500, placeDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque.", colorButton="yellow", sale=false, linkSale="#")
 	.package-item.col.l-4.m-12.c-12
 		.package-item-container
 			.package-media
@@ -192,7 +192,7 @@ mixin packageItem(placeName=placeNames.berlin.name, placeLink=placeNames.berlin.
 				a(href=placeLink, class=`lg-${colorIcon}`).package-media-icon
 					img(src=placeIcon, alt="Icon")
 				if sale !== false
-					a(href="#").package-media-label Sale
+					a(href=linkSale).package-media-label Sale
 			.package-item-wrapper
 				.package-info
 					a(href=placeLink).package-info-place.color-title=placeName
@@ -230,14 +230,59 @@ mixin footerSocial(type="")
 
 //- Header Packages Page
 mixin headerPackagePage(packageName="", packageLocation="", packageTime="", packageBg="", packageBgDirect="center")
-	header(class="header__package", style= `background: -webkit-gradient(linear, left top, left bottom, from(rgba(101, 100, 96, 0.3))), url(${packageBg}) ${packageBgDirect} center / cover no-repeat`)
-		include header-navbar
-		.header__package-content.grid.wide
-			h1.header__package-content-title= packageName
-			.header__package-content-info
-				.header__package-info-item
-					img(src="./images/icon-location.png", alt="icon location").header__package-info-icon
-					a(href="#").header__package-info-text= packageLocation
-				.header__package-info-item
-					img(src="./images/icon-time-white.png", alt="icon timer").header__package-info-icon
-					span.header__package-info-text= packageTime
+	if packageLocation !== ""
+		header(class="header__package", style= `background: -webkit-gradient(linear, left top, left bottom, from(rgba(101, 100, 96, 0.3))), url(${packageBg}) ${packageBgDirect} center / cover no-repeat`)
+			include header-navbar
+			.header__package-content.grid.wide
+				h1.header__package-content-title= packageName
+				.header__package-content-info
+					.header__package-info-item
+						img(src="./images/icon-location.png", alt="icon location").header__package-info-icon
+						a(href="#").header__package-info-text= packageLocation
+					.header__package-info-item
+						img(src="./images/icon-time-white.png", alt="icon timer").header__package-info-icon
+						span.header__package-info-text= packageTime
+	else
+		header(class="header__package", style= `background: -webkit-gradient(linear, left top, left bottom, from(rgba(101, 100, 96, 0.3))), url(${packageBg}) ${packageBgDirect} center / cover no-repeat`)
+			include header-navbar
+			.header__package-content.grid.wide
+				h1.header__package-content-title= packageName
+
+//- PAGE
+
+//- Package Content Header
+mixin packageContentHeaderItem(iconSrc="", infoTitle="", infoDesc="", more, moreItems={})
+	li.package-content-header-item.col.l-4
+		img(src=iconSrc, alt="icon", class="package-content-header-icon")
+		.package-content-header-info
+			h3.package-content-info-title= infoTitle
+			.package-content-info-wrapper
+				h4.package-content-info-desc= infoDesc
+				if more !== 0
+					h5.package-content-info-more.bg-red= `+ ${more}`
+						ul.package-content-info-list
+							each val, key in moreItems
+								li.package-content-info-item
+									a(href=val).package-content-info-link=key
+
+//- Package Sidebar Subscribe
+mixin packageSidebarSubscribe(bg="", priceOrigin, priceSale, linkPackagePage="", labelSale="Sale")
+	.package-sidebar-subscribe
+		if priceSale !== 0
+			h2(class=`package-sidebar-subscribe-title bg-${bg}`) #[span.package-price-origin=priceOrigin] #[span=priceSale] #[span.package-price-currency $]
+				a(href=linkPackagePage).package-price-sale-label=labelSale
+		else
+			h2(class=`package-sidebar-subscribe-title bg-${bg}`) #{priceOrigin} #[span.package-price-currency $]
+
+//- Package Content Background
+mixin packageContentBackground(srcImage="", altImage="")
+	.package-content-bg
+		img(src=srcImage, alt=altImage, class="package-content-image")
+
+//- Package Content Navbar
+mixin packageContentNavItem(idPackageContent="", linkPackageContent="", active=false)
+	li.package-content-nav-item
+		if active !== false
+			a(href=`#${idPackageContent}`, class="package-content-nav-link package-content-nav-link--active")=linkPackageContent
+		else
+			a(href=`#${idPackageContent}`, class="package-content-nav-link")=linkPackageContent
