@@ -906,3 +906,73 @@
 	border-top: 1px solid $border-color;
 	padding-top: 7rem;
 }
+
+// Destination Page
+.destination {
+	&-wrapper {
+		margin-top: 5rem;
+		margin-bottom: 5rem;
+	}
+	&-top {
+		@include flexbox;
+		color: $text-color;
+		margin-bottom: 4rem;
+		&-left {
+			@include flexbox;
+			h2 {
+				display: inline-block;
+				padding: 2.8rem;
+				line-height: 3rem;
+				font-size: 7rem;
+				color: $text-color;
+				letter-spacing: 0.1rem;
+			}
+		}
+	}
+	&-bottom {
+		color: $text-color;
+	}
+	&-right {
+		&-wrapper {
+			@include flexbox(flex-start, flex-start, column);
+		}
+		&-list {
+			width: 100%;
+			padding: 3rem;
+			border: 1px solid $border-color;
+		}
+		&-item {
+			@include flexbox(stretch);
+			& + .destination-right-item {
+				margin-top: 2rem;
+			}
+			&-image {
+				background-color: $primary-color;
+				display: inline-block;
+				padding: 1rem;
+				margin-right: 1.5rem;
+				img {
+					width: 2.5rem;
+					height: 2.5rem;
+				}
+			}
+			&-info {
+				@include flexbox(flex-start, space-between, column);
+			}
+			&-title {
+				text-transform: uppercase;
+				color: $title-color;
+				font-size: 1.4rem;
+				line-height: 1.4rem;
+				letter-spacing: 0.1rem;
+				margin-top: 0.5rem;
+			}
+			&-desc {
+				color: $text-color;
+				font-size: 1.4rem;
+				line-height: 2.7rem;
+				letter-spacing: 0.1rem;
+			}
+		}
+	}
+}

@@ -204,9 +204,9 @@ mixin packageItem(placeName=placeNames.berlin.name, placeLink=placeNames.berlin.
 						span.package-type-text #[a(href="#").color-title= placeType]
 						span.package-type-text #[a(href="#").color-title= placeTypePlus] #[span(class=`bg-${colorButton}`) + 1]
 					if priceSale !== 0
-						a(href="#").package-type-price.color-title #[span.package-type-price-origin #{priceOrigin}] #{priceSale} $
+						a(href=placeLink).package-type-price.color-title #[span.package-type-price-origin #{priceOrigin}] #{priceSale} $
 					else
-						a(href="#").package-type-price.color-title #{priceOrigin} $
+						a(href=placeLink).package-type-price.color-title #{priceOrigin} $
 				p.package-desc.color-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque.
 				a(href=placeLink, class=`bg-${colorButton}`).package-btn.btn.btn-sm.color-white details
 

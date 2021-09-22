@@ -1,4 +1,41 @@
 section.destination.grid.wide
-	.desctination-wrapper.row.lg-gutter
+	.destination-wrapper.row.lg-gutter
 		.destination-left.col.l-8.m-12.c-12
+			.destination-top.row.lg-gutter
+				.destination-top-left.col.l-6
+					h2 A
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dapibus, odio sit amet convallis sollicitudin, lacus
+				.destination-top-right.col.l-6
+					p Nullam porta magna non turpis iaculis, sit amet rutrum velit scelerisque. Duis sed pretium neque. Fusce aliquam enim blandit augue tristique suscipit. Etiam eget
+			.destination-bottom.row.lg-gutter
+				p.col.l-12 Vivamus volutpat eros pulvinar velit laoreet, sit amet egestas erat dignissim. Sed quis rutrum tellus, sit amet viverra felis. Cras sagittis sem sit amet urna feugiat rutrum. Nam nulla ipsum, venenatis malesuada felis quis, ultricies convallis neque. Pellentesque tristique fringilla tempus.
 		.destination-right.col.l-4.m-12.c-12
+			.destination-right-wrapper.row.lg-gutter
+				.destination-right-list
+					.destination-right-item
+						.destination-right-item-image
+							img(src="./images/des-icon-planet-earth-white.png", alt="Icon")
+						.destination-right-item-info
+							h3.destination-right-item-title Packages
+							h4.destination-right-item-desc 3 Tours in Europe
+					.destination-right-item
+						.destination-right-item-image
+							img(src="./images/des-icon-map-location-white.svg", alt="Icon")
+						.destination-right-item-info
+							h3.destination-right-item-title Europe
+							h4.destination-right-item-desc Check the best Tours
+					.destination-right-item
+						.destination-right-item-image
+							img(src="./images/des-icon-message-white.svg", alt="Icon")
+						.destination-right-item-info
+							h3.destination-right-item-title Contact Us
+							h4.destination-right-item-desc lovetravel@theme.com
+section.destination-package
+	.related-package-container.grid.wide
+		.related-package-wrapper.row.lg-gutter
+			.package-page-related.col.l-12
+				+blockTitle("europe", "", "packages", "blue")
+				.package-list.row.lg-gutter
+					+packageItem(placeNames.berlin.name, placeNames.berlin.link, placeImgs.berlin, placeIcons.arch, "orange", placeLocations.europe.name, placeLocations.europe.link, "Cultural", "Relax", 700, 0, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque.", "yellow")
+					+packageItem(placeNames.amsterdam.name, placeNames.amsterdam.link, placeImgs.amsterdam, placeIcons.eye, "orange-rev", placeLocations.us.name, placeLocations.us.link, "History", "Sport", 1500, 0, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque.", "orange")
+					+packageItem(placeNames.tuscany.name, placeNames.tuscany.link, placeImgs.tuscany, placeIcons.pisa, "green", placeLocations.italy.name, placeLocations.italy.link, "Sport", "Relax", 950, 730, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque.", "green", true, "/tuscany.html")
